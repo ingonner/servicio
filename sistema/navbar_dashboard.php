@@ -13,7 +13,7 @@
                             
 					<li class="active"><a href="dashboard.php"><i class="icon-home icon-large"></i>&nbsp;Inicio</a></li>
                             <li class="divider-vertical"></li>
-					<li><a href="users.php"><i class="icon-user icon-large"></i>&nbsp;Usuarios</a></li>
+					<li><a href="usuarios.php"><i class="icon-user icon-large"></i>&nbsp;Usuarios</a></li>
 					<?php 
 					include('dropdown.php');
 					?>

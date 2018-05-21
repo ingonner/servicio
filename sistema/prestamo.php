@@ -11,25 +11,27 @@
 
 		<div class="span12">		
 
-		<form method="post" action="borrow_save.php">
+		<form method="post" action="guardar_prestamo.php">
 <div class="span3">
-
-											<div class="control-group">
+<div class="control-group">
 				<label class="control-label" for="inputEmail">Nombre del alumno</label>
 				<div class="controls">
-				<select name="member_id" class="chzn-select"required/>
+				<select name="id_alumno" class="chzn-select"required/>
 				<option></option>
-				<?php $result =  mysql_query("select * from member")or die(mysql_error()); 
+				
+                    <?php $result =  mysql_query("select * from alumnos")or die(mysql_error()); 
 				while ($row=mysql_fetch_array($result)){ ?>
-				<option value="<?php echo $row['member_id']; ?>"><?php echo $row['firstname']." ".$row['lastname']; ?></option>
+					<option value="<?php echo $row['id_alumno']; ?>"><?php echo $row['id_alumno']." ".$row['nombre']." ".$row['apellido']; ?>
+                    </option>
 				<?php } ?>
+                    
 				</select>
 				</div>
 			</div>
 				<div class="control-group"> 
 					<label class="control-label" for="inputEmail">Fecha a devolver</label>
 					<div class="controls">
-					<input type="text"  class="w8em format-d-m-y highlight-days-67 range-low-today" name="due_date" id="sd" maxlength="10" style="border: 3px double #CCCCCC;" required/>
+					<input type="text"  class="w8em format-d-m-y highlight-days-67 range-low-today" name="fecha_devolucion" id="sd" maxlength="10" style="border: 3px double #CCCCCC;" required/>
 					</div>
 				</div>
 				<div class="control-group"> 
@@ -40,41 +42,40 @@
 				</div>
 				</div>
 				<div class="span8">
-						<div class="alert alert-success"><strong>Select Book</strong></div>
+						<div class="alert alert-success"><strong>Selecciona el (los) materiales a prestar...</strong></div>
                             <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
 
                                 <thead>
                                     <tr>
                        
-                                        <th>Acc No.</th>                                 
-                                        <th>Book title</th>                                 
-                                        <th>Category</th>
-										<th>Author</th>
-										<th>Publisher name</th>
-										<th>status</th>
-										<th>Add</th>
-										
+                                        <th>ID</th>                                 
+                                        <th>Nombre</th>                                 
+                                        <th>Categoría</th>
+										<th>Marca</th>
+										<th>Detalles</th>
+										<th>Estatus</th>
+										<th>Agregar</th>										
                                     </tr>
                                 </thead>
                                 <tbody>
 								 
-                                  <?php  $user_query=mysql_query("select * from book where status != 'Archive' ")or die(mysql_error());
+                                  <?php  $user_query=mysql_query("select * from articulos where estatus != 'Archive' ")or die(mysql_error());
 									while($row=mysql_fetch_array($user_query)){
-									$id=$row['book_id'];  
-									$cat_id=$row['category_id'];
+									$id=$row['id_articulo'];  
+									$cat_id=$row['id_categoria'];
 
-											$cat_query = mysql_query("select * from category where category_id = '$cat_id'")or die(mysql_error());
+											$cat_query = mysql_query("select * from categorias where id_categoria = '$cat_id'")or die(mysql_error());
 											$cat_row = mysql_fetch_array($cat_query);
 									?>
 									<tr class="del<?php echo $id ?>">
 									
 									                              
-                                    <td><?php echo $row['book_id']; ?></td>
-                                    <td><?php echo $row['book_title']; ?></td>
-									<td><?php echo $cat_row ['classname']; ?> </td> 
-                                    <td><?php echo $row['author']; ?> </td> 
-									 <td><?php echo $row['publisher_name']; ?></td>
-									  <td width=""><?php echo $row['status']; ?></td> 
+                                    <td><?php echo $row['id_articulo']; ?></td>
+                                    <td><?php echo $row['nombre_articulo']; ?></td>
+									<td><?php echo $cat_row ['nombre_categoria']; ?> </td> 
+                                    <td><?php echo $row['marca']; ?> </td> 
+									 <td><?php echo $row['detalle']; ?></td>
+									  <td width=""><?php echo $row['estatus']; ?></td> 
 									<?php include('toolttip_edit_delete.php'); ?>
                                     <td width="20">
 												<input id="" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id; ?>" >
