@@ -6,7 +6,7 @@
 	$due_date  = $_POST['due_date'];
 
 	if ($id == '' ){ 
-	header("location: borrow.php");
+	header("location: prestamo.php");
 	?>
 	
 
@@ -26,7 +26,7 @@ for($i=0; $i < $N; $i++)
 	 mysql_query("insert borrowdetails (book_id,borrow_id,borrow_status) values('$id[$i]','$borrow_id','pending')")or die(mysql_error());
 
 }
-header("location: borrow.php");
+header("location: prestamo.php");
 }  
 ?>
 	

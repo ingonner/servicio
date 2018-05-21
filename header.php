@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>E.B. Magalona National High School</title>
+	<title>Prestamos de material</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap -->
 			<link href="css/bootstrap.css" rel="stylesheet" media="screen">

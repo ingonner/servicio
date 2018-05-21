@@ -5,28 +5,28 @@
 			<div class="row">	
 			<div class="span12">
 					<div class="sti">
-						<img src="../LMS/E.B. Magalona.png" class="img-rounded">
+						<img src="../LMS/headeritspa.PNG" class="img-rounded">
 					</div>
 				<div class="login">
 				<div class="log_txt">
-				<p><strong>Please Enter the Details Below..</strong></p>
+				<p><strong>Por favor, ingresa tus datos</strong></p>
 				</div>
 						<form class="form-horizontal" method="POST">
 								<div class="control-group">
-									<label class="control-label" for="inputEmail">Username</label>
+									<label class="control-label" for="inputEmail">Usuario</label>
 									<div class="controls">
-									<input type="text" name="username" id="username" placeholder="Username" required>
+									<input type="text" name="username" id="username" placeholder="Ingresa tu nombre de usuario" required>
 									</div>
 								</div>
 								<div class="control-group">
-									<label class="control-label" for="inputPassword">Password</label>
+									<label class="control-label" for="inputPassword">Contraseña</label>
 									<div class="controls">
-									<input type="password" name="password" id="password" placeholder="Password" required>
+									<input type="password" name="password" id="password" placeholder="ingresa tu contraseña" required>
 								</div>
 								</div>
 								<div class="control-group">
 									<div class="controls">
-									<button id="login" name="submit" type="submit" class="btn"><i class="icon-signin icon-large"></i>&nbsp;Submit</button>
+									<button id="login" name="submit" type="submit" class="btn"><i class="icon-signin icon-large"></i>&nbsp;Ingresar al sistema</button>
 								</div>
 								</div>
 								
@@ -44,7 +44,7 @@
 								$_SESSION['id']=$row['user_id'];
 									}
 									else{ ?>
-								<div class="alert alert-danger">Access Denied</div>		
+								<div class="alert alert-danger">Datos incorrectos</div>		
 								<?php
 								}}
 								?>

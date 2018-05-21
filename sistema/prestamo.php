@@ -1,12 +1,12 @@
 <?php include('header.php'); ?>
 <?php include('session.php'); ?>
-<?php include('navbar_borrow.php'); ?>
+<?php include('navbar_dashboard.php'); ?>
     <div class="container">
 		<div class="margin-top">
 			<div class="row">	
 								<div class="alert alert-info">
                                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong><i class="icon-user icon-large"></i>&nbsp;Borrow Table</strong>
+                                    <strong><i class="icon-user icon-large"></i>&nbsp;Nuevo prestamo</strong>
                                 </div>
 
 		<div class="span12">		
@@ -15,7 +15,7 @@
 <div class="span3">
 
 											<div class="control-group">
-				<label class="control-label" for="inputEmail">Borrower Name</label>
+				<label class="control-label" for="inputEmail">Nombre del alumno</label>
 				<div class="controls">
 				<select name="member_id" class="chzn-select"required/>
 				<option></option>
@@ -27,7 +27,7 @@
 				</div>
 			</div>
 				<div class="control-group"> 
-					<label class="control-label" for="inputEmail">Due Date</label>
+					<label class="control-label" for="inputEmail">Fecha a devolver</label>
 					<div class="controls">
 					<input type="text"  class="w8em format-d-m-y highlight-days-67 range-low-today" name="due_date" id="sd" maxlength="10" style="border: 3px double #CCCCCC;" required/>
 					</div>
@@ -35,7 +35,7 @@
 				<div class="control-group"> 
 					<div class="controls">
 
-								<button name="delete_student" class="btn btn-success"><i class="icon-plus-sign icon-large"></i> Borrow</button>
+								<button name="delete_student" class="btn btn-success"><i class="icon-plus-sign icon-large"></i> Realizar prestamo</button>
 					</div>
 				</div>
 				</div>
