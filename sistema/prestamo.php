@@ -21,7 +21,7 @@
 				
                     <?php $result =  mysql_query("select * from alumnos")or die(mysql_error()); 
 				while ($row=mysql_fetch_array($result)){ ?>
-					<option value="<?php echo $row['id_alumno']; ?>"><?php echo $row['id_alumno']." ".$row['nombre']." ".$row['apellido']; ?>
+					<option value="<?php echo $row['id_alumno']; ?>"><?php echo $row['nombre']." ".$row['apellido']; ?>
                     </option>
 				<?php } ?>
                     

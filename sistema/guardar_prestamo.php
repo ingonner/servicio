@@ -23,7 +23,7 @@
 $N = count($id);
 for($i=0; $i < $N; $i++)
 {
-	 mysql_query("insert detalle_prestamos (id_articulo,id_prestamo,estatus_prestamo) values('$id[$i]','$id_prestamo','pending')")or die(mysql_error());
+	 mysql_query("insert detalle_prestamos (id_articulo,id_prestamo,estatus_prestamo) values('$id[$i]','$id_prestamo','pendiente')")or die(mysql_error());
 
 }
 header("location: prestamo.php");

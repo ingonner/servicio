@@ -5,10 +5,10 @@
 		<div class="margin-top">
 			<div class="row">	
 				<div class="span12">		
-						<div class="alert alert-info"><strong>Borrowed Books</strong></div>
+						<div class="alert alert-info"><strong>Articulos prentados</strong></div>
                             <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
 								<div class="pull-right">
-								<a href="" onclick="window.print()" class="btn btn-info"><i class="icon-print icon-large"></i> Print</a>
+								<a href="" onclick="window.print()" class="btn btn-info"><i class="icon-print icon-large"></i> Imprimir</a>
 								</div>
                                 <thead>
                                     <tr>
@@ -29,7 +29,7 @@
 								LEFT JOIN alumnos ON prestamos.id_alumno = alumnos.id_alumno
 								LEFT JOIN detalle_prestamos ON prestamos.id_prestamo = detalle_prestamos.id_prestamo
 								LEFT JOIN articulos on detalle_prestamos.id_articulo =  articulos.id_articulo 
-								where detalle_prestamos.estatus_prestamo = 'devuelto' ORDER BY prestamos.id_prestamo DESC
+								where detalle_prestamos.estatus_prestamo = 'pendiente' ORDER BY prestamos.id_prestamo DESC
 								  ")or die(mysql_error());
 									while($row=mysql_fetch_array($user_query)){
 									$id=$row['id_prestamo'];
@@ -45,8 +45,10 @@
                                     <td><?php echo $row['carrera']; ?></td>
 									<td><?php echo $row['fecha_prestamo']; ?></td> 
                                     <td><?php echo $row['fecha_devolucion']; ?> </td>
-									<td><?php echo $row['fecha_entregado']; ?> </td>
-                                    <td></td> 
+									
+                                    	<td> <a rel="tooltip"  title="Marcar como entregado" id="<?php echo $detalle_prestamos; ?>" href="#delete_book<?php echo $id_detalle_prestamos; ?>" data-toggle="modal"    class="btn btn-success"><i class="icon-check icon-large"></i>Entreg.</a>
+                                    <?php include('modal_devolver.php'); ?>
+                                    <td></td>
 									 
                                     </tr>
 									<?php  }  ?>
@@ -58,11 +60,11 @@
 	
 <script>		
 $(".uniform_on").change(function(){
-    var max= 3;
+    var max= 10;
     if( $(".uniform_on:checked").length == max ){
 	
         $(".uniform_on").attr('disabled', 'disabled');
-		         alert('3 articulos son permitidos por prestamo');
+		         alert('10 articulos son permitidos por prestamo');
         $(".uniform_on:checked").removeAttr('disabled');
 		
     }else{
