@@ -46,7 +46,7 @@
 									<td><?php echo $row['estatus_prestamo'];?></td>
                                         
 									<td> <a rel="tooltip"  title="Marcar como entregado" id="<?php echo $detalle_prestamos; ?>" href="#delete_book<?php echo $id_detalle_prestamos; ?>" data-toggle="modal"    class="btn btn-success"><i class="icon-check icon-large"></i>Entreg.</a>
-                                    <?php include('modal_return.php'); ?>
+                                    <?php include('modal_devolver.php'); ?>
                                     <td></td> 
 									 
                                     </tr>
