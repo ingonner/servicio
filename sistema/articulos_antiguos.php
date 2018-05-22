@@ -1,22 +1,22 @@
 <?php include('header.php'); ?>
 <?php include('session.php'); ?>
-<?php include('navbar_books.php'); ?>
+<?php include('navbar_dashboard.php'); ?>
     <div class="container">
 		<div class="margin-top">
 			<div class="row">	
 			<div class="span12">	
 			   <div class="alert alert-info">
                                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong><i class="icon-user icon-large"></i>&nbsp;Books Table</strong>
+                                    <strong><i class="icon-user icon-large"></i>&nbsp;Tabla de Articulos</strong>
                                 </div>
 						<!--  -->
 								    <ul class="nav nav-pills">
-										<li><a href="books.php">All</a></li>
-										<li><a href="new_books.php">New Books</a></li>
-										<li class="active"><a href="old_books.php">Old Books</a></li>
-										<li><a href="lost.php">Lost Books</a></li>
-										<li><a href="damage.php">Damage Books</a></li>
-										<li><a href="sub_rep.php">Subject for Replacement</a></li>
+										<li><a href="articulos.php">Todos</a></li>
+										<li><a href="articulos_nuevos.php">Articulos nuevos</a></li>
+										<li  class="active"><a href="articulos_antiguos.php">Articulos antiguos</a></li>
+										<li><a href="perdidos.php">Articulos perdidos</a></li>
+										<li><a href="danados.php">Articulos dañados</a></li>
+										<li><a href="reemplazo.php">Reemplazar articulo dañado</a></li>
 									</ul>
 						<!--  -->
 						<center class="title">

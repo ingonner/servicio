@@ -58,22 +58,3 @@
 
 			</div>		
 	
-<script>		
-$(".uniform_on").change(function(){
-    var max= 10;
-    if( $(".uniform_on:checked").length == max ){
-	
-        $(".uniform_on").attr('disabled', 'disabled');
-		         alert('10 articulos son permitidos por prestamo');
-        $(".uniform_on:checked").removeAttr('disabled');
-		
-    }else{
-
-         $(".uniform_on").removeAttr('disabled');
-    }
-})
-</script>		
-			</div>
-		</div>
-    </div>
-<?php include('footer.php') ?>	

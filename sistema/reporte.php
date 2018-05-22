@@ -58,11 +58,11 @@
 	
 <script>		
 $(".uniform_on").change(function(){
-    var max= 3;
+    var max= 10;
     if( $(".uniform_on:checked").length == max ){
 	
         $(".uniform_on").attr('disabled', 'disabled');
-		         alert('3 articulos son permitidos por prestamo');
+		         alert('10 articulos son permitidos por prestamo');
         $(".uniform_on:checked").removeAttr('disabled');
 		
     }else{

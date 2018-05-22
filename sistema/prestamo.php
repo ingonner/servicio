@@ -59,7 +59,7 @@
                                 </thead>
                                 <tbody>
 								 
-                                  <?php  $user_query=mysql_query("select * from articulos where estatus != 'Archive' ")or die(mysql_error());
+                                  <?php  $user_query=mysql_query("select * from articulos where estatus != 'Archivado' ")or die(mysql_error());
 									while($row=mysql_fetch_array($user_query)){
 									$id=$row['id_articulo'];  
 									$cat_id=$row['id_categoria'];
@@ -76,7 +76,7 @@
                                     <td><?php echo $row['marca']; ?> </td> 
 									 <td><?php echo $row['detalle']; ?></td>
 									  <td width=""><?php echo $row['estatus']; ?></td> 
-									<?php include('toolttip_edit_delete.php'); ?>
+									<?php include('barra_editar_borrar.php'); ?>
                                     <td width="20">
 												<input id="" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id; ?>" >
 												

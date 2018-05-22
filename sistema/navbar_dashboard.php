@@ -18,7 +18,7 @@
 					include('dropdown.php');
 					?>
                             <li class="divider-vertical"></li>
-					<li><a href="books.php"><i class="icon-book icon-large"></i>&nbsp;Books</a></li>
+					<li><a href="articulos.php"><i class="icon-book icon-large"></i>&nbsp;Articulos</a></li>
                             <li class="divider-vertical"></li>
 					<li><a href="member.php"><i class="icon-group icon-large"></i>&nbsp;Member</a></li>
                             <li class="divider-vertical"></li>

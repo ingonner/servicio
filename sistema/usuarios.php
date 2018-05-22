@@ -50,7 +50,7 @@
 										<a rel="tooltip"  title="Editar" id="e<?php echo $id; ?>" href="#edit<?php echo $id; ?>" data-toggle="modal" class="btn btn-success"><i class="icon-pencil icon-large"></i></a>
                                     	<?php include('modal_edit_user.php'); ?>
 									</td>
-									<?php include('toolttip_edit_delete.php'); ?>
+									<?php include('barra_editar_borrar.php'); ?>
 									     <!-- Modal edit user -->
 								
                                     </tr>
