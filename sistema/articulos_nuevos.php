@@ -14,63 +14,72 @@
 										<li><a href="articulos.php">Todos</a></li>
 										<li class="active"><a href="articulos_nuevos.php">Articulos nuevos</a></li>
 										<li><a href="articulos_antiguos.php">Articulos antiguos</a></li>
-										<li><a href="perdidos.php">Articulos perdidos</a></li>
-										<li><a href="danados.php">Articulos dañados</a></li>
-										<li><a href="reemplazo.php">Reemplazar articulo dañado</a></li>
+										<li><a href="articulos_perdidos.php">Articulos perdidos</a></li>
+										<li><a href="articulos_danados.php">Articulos dañados</a></li>
+
 									</ul>
 						<!--  -->
 						<center class="title">
-						<h1>New Books</h1>
+						<h1>Articulos nuevos</h1>
 						</center>
                             <table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="example">
 								<div class="pull-right">
-								<a href="" onclick="window.print()" class="btn btn-info"><i class="icon-print icon-large"></i> Print</a>
+								<a href="" onclick="window.print()" class="btn btn-info"><i class="icon-print icon-large"></i> Imprimir</a>
 								</div>
-								<p><a href="add_books.php" class="btn btn-success"><i class="icon-plus"></i>&nbsp;Add Books</a></p>
+								<p><a href="nuevo_articulo.php" class="btn btn-success"><i class="icon-plus"></i>&nbsp;Agregar articulo</a></p>
 							
                                 <thead>
                                     <tr>
-									    <th>Acc No.</th>                                 
-                                        <th>Book Title</th>                                 
-                                        <th>Category</th>
-										<th>Author</th>
-										<th class="action">copies</th>
-										<th>Book Pub</th>
-										<th>Publisher Name</th>
-										<th>ISBN</th>
-										<th>Copyright Year</th>
-										<th>Date Added</th>
-										<th class="action">Action</th>		
+									    <th>ID Artic.</th>                                 
+                                        <th>Nombre artic.</th>                                 
+                                        <th>Categoría</th>
+										<th>Marca</th>
+										<th class="action">Cantidad</th>
+										<th>Descripc.</th>
+										<th>Añadido desde</th>
+										<th>Estatus</th>
+										<th class="action">Acción</th>		
                                     </tr>
                                 </thead>
                                 <tbody>
 								 
-                                  <?php  $user_query=mysql_query("select * from book where status = 'new'")or die(mysql_error());
-									while($row=mysql_fetch_array($user_query)){
-									$id=$row['book_id'];  
-									$cat_id=$row['category_id'];
+                                  <?php 
 
-											$cat_query = mysql_query("select * from category where category_id = '$cat_id'")or die(mysql_error());
+							
+							
+									
+
+								  $user_query=mysql_query("select * from articulos where estatus = 'Nuevo'")or die(mysql_error());
+									while($row=mysql_fetch_array($user_query)){
+									$id=$row['id_articulo'];  
+									$id_categoria=$row['id_categoria'];
+									$ejemplares = $row['ejemplares'];
+									
+									$detalle_prestamos = mysql_query("select * from detalle_prestamos where id_articulo = '$id' and estatus_prestamo = 'pendiente'");
+									$row11 = mysql_fetch_array($detalle_prestamos);
+									$count = mysql_num_rows($detalle_prestamos);
+									
+									$total =  $ejemplares  -  $count; 
+									
+                                        $cat_query = mysql_query("select * from categorias where id_categoria = '$id_categoria'")or die(mysql_error());
 											$cat_row = mysql_fetch_array($cat_query);
 									?>
+                                    
 									<tr class="del<?php echo $id ?>">
-									
-									                              
-                                    <td><?php echo $row['book_id']; ?></td>
-                                    <td><?php echo $row['book_title']; ?></td>
-									<td><?php echo $cat_row ['classname']; ?> </td>
-                                    <td><?php echo $row['author']; ?> </td> 
-                                    <td class="action"><?php echo $row['book_copies']; ?> </td>
-                                     <td><?php echo $row['book_pub']; ?></td>
-									 <td><?php echo $row['publisher_name']; ?></td>
-									 <td><?php echo $row['isbn']; ?></td>
-									 <td><?php echo $row['copyright_year']; ?></td>		
-									 <td><?php echo $row['date_added']; ?></td>
-									<?php include('toolttip_edit_delete.php'); ?>
-                                    <td class="action">
-                                        <a rel="tooltip"  title="Delete" id="<?php echo $id; ?>" href="#delete_book<?php echo $id; ?>" data-toggle="modal"    class="btn btn-danger"><i class="icon-trash icon-large"></i></a>
-                                        <?php include('delete_book_modal.php'); ?>
-										<a  rel="tooltip"  title="Edit" id="e<?php echo $id; ?>" href="edit_book.php<?php echo '?id='.$id; ?>" class="btn btn-success"><i class="icon-pencil icon-large"></i></a>
+                                    <td><?php echo $row['id_articulo']; ?></td>
+                                    <td><?php echo $row['nombre_articulo']; ?></td>
+									<td><?php echo $cat_row ['nombre_categoria']; ?> </td>
+                                    <td><?php echo $row['marca']; ?> </td> 
+                                    <td class="action"><?php echo   $total;   ?> </td>
+                                     <td><?php echo $row['detalle']; ?></td>	
+									 <td><?php echo $row['fecha_agregado']; ?></td>
+									 <td><?php echo $row['estatus']; ?></td>
+									<?php include('barra_editar_borrar.php'); ?>
+                                    
+                                        <td class="action">
+                                        <a rel="tooltip"  title="Eliminar" id="<?php echo $id; ?>" href="#borrar_articulo<?php echo $id; ?>" data-toggle="modal"    class="btn btn-danger"><i class="icon-trash icon-large"></i></a>
+                                        <?php include('modal_borrar_articulo.php'); ?>
+										<a  rel="tooltip"  title="Editar" id="e<?php echo $id; ?>" href="editar_articulo.php<?php echo '?id='.$id; ?>" class="btn btn-success"><i class="icon-pencil icon-large"></i></a>
 										
                                     </td>
 									

@@ -64,7 +64,7 @@
 			<select name="estatus">
 				<option><?php echo $row['estatus']; ?></option>
 				<option>Nuevo</option>
-				<option>Viejo</option>
+				<option>Antiguo</option>
 				<option>Perdido</option>
 				<option>Dañado</option>
 				<option>Requiere reemplazo</option>

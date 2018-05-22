@@ -14,9 +14,9 @@
 										<li   class="active"><a href="articulos.php">Todos</a></li>
 										<li><a href="articulos_nuevos.php">Articulos nuevos</a></li>
 										<li><a href="articulos_antiguos.php">Articulos antiguos</a></li>
-										<li><a href="perdidos.php">Articulos perdidos</a></li>
-										<li><a href="danados.php">Articulos dañados</a></li>
-										<li><a href="reemplazo.php">Reemplazar articulo dañado</a></li>
+										<li><a href="articulos_perdidos.php">Articulos perdidos</a></li>
+										<li><a href="articulos_danados.php">Articulos dañados</a></li>
+									
 									</ul>
 						<!--  -->
 						<center class="title">
@@ -24,7 +24,7 @@
 						</center>
                             <table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="example">
 								<div class="pull-right">
-								<a href="" onclick="window.print()" class="btn btn-info"><i class="icon-print icon-large"></i> Print</a>
+								<a href="" onclick="window.print()" class="btn btn-info"><i class="icon-print icon-large"></i> Imprimir</a>
 								</div>
 								<p><a href="nuevo_articulo.php" class="btn btn-success"><i class="icon-plus"></i>&nbsp;Agregar articulo</a></p>
 							

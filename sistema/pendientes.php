@@ -14,7 +14,8 @@
                                     <tr>
                                         <th>Articulo</th>                                 
                                         <th>Alumno</th>                                 
-                                        <th>Carrera</th>                                 
+                                        <th>Carrera</th>
+                                        <th>Num. Ctrl.</th> 
                                         <th>Fecha del prestamo</th>                                 
                                         <th>Fecha de devolución</th>                                
                                         <th>Fecha de entregado</th>
@@ -24,7 +25,7 @@
                                 <tbody>
 								 
                                   <?php  $user_query=mysql_query("select prestamos.id_prestamo, articulos.id_articulo, id_detalle_prestamos, nombre_articulo, nombre, apellido, carrera,
-                                  fecha_prestamo, prestamos.fecha_devolucion, fecha_entregado
+                                  fecha_prestamo, prestamos.fecha_devolucion, fecha_entregado, num_control
                                   from prestamos
 								LEFT JOIN alumnos ON prestamos.id_alumno = alumnos.id_alumno
 								LEFT JOIN detalle_prestamos ON prestamos.id_prestamo = detalle_prestamos.id_prestamo
@@ -43,6 +44,7 @@
                                     <td><?php echo $row['nombre_articulo']; ?></td>
                                     <td><?php echo $row['nombre']." ".$row['apellido']; ?></td>
                                     <td><?php echo $row['carrera']; ?></td>
+                                    <td><?php echo $row['num_control']; ?></td>
 									<td><?php echo $row['fecha_prestamo']; ?></td> 
                                     <td><?php echo $row['fecha_devolucion']; ?> </td>
 									

@@ -40,7 +40,7 @@
 		<div class="control-group">
 			<label class="control-label" for="inputEmail">Marca:</label>
 			<div class="controls">
-	<input type="text"  class="span4" id="inputPassword" name="marca"  placeholder="Author" required>
+	<input type="text"  class="span4" id="inputPassword" name="marca"  placeholder="Marca" required>
 			</div>
 		</div>
 		
@@ -68,7 +68,7 @@
 			<select name="estatus" required>
 				<option></option>
 				<option>Nuevo</option>
-				<option>Viejo</option>
+				<option>Antiguo</option>
 				<option>Perdido</option>
 				<option>Dañado</option>
 				<option>Necesita reemplazo</option>

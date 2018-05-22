@@ -13,14 +13,14 @@
 								    <ul class="nav nav-pills">
 										<li><a href="articulos.php">Todos</a></li>
 										<li><a href="articulos_nuevos.php">Articulos nuevos</a></li>
-										<li  class="active"><a href="articulos_antiguos.php">Articulos antiguos</a></li>
-										<li><a href="articulos_perdidos.php">Articulos perdidos</a></li>
+										<li><a href="articulos_antiguos.php">Articulos antiguos</a></li>
+										<li  class="active"><a href="articulos_perdidos.php">Articulos perdidos</a></li>
 										<li><a href="articulos_danados.php">Articulos dañados</a></li>
-										
+									
 									</ul>
 						<!--  -->
 						<center class="title">
-						<h1>Articulos antiguos</h1>
+						<h1>Articulos perdidos</h1>
 						</center>
                             <table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="example">
 								<div class="pull-right">
@@ -49,7 +49,7 @@
 							
 									
 
-								  $user_query=mysql_query("select * from articulos where estatus = 'Antiguo'")or die(mysql_error());
+								  $user_query=mysql_query("select * from articulos where estatus = 'Perdido'")or die(mysql_error());
 									while($row=mysql_fetch_array($user_query)){
 									$id=$row['id_articulo'];  
 									$id_categoria=$row['id_categoria'];
