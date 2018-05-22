@@ -31,7 +31,7 @@
 				<div class="control-group"> 
 					<label class="control-label" for="inputEmail">Fecha a devolver</label>
 					<div class="controls">
-					<input type="text"  class="w8em format-d-m-y highlight-days-67 range-low-today" name="fecha_devolucion" id="sd" maxlength="10" style="border: 3px double #CCCCCC;" required/>
+					<input type="text"  class="w8em format-d-m-y highlight-days-67 range-low-today" name="fecha_devolucion" id="sd" maxlength="10" style="border: 3px double #CCCCCC;" autocomplete="off" required/>
 					</div>
 				</div>
 				<div class="control-group"> 

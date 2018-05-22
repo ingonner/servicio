@@ -20,7 +20,7 @@
                             <li class="divider-vertical"></li>
 					<li><a href="articulos.php"><i class="icon-book icon-large"></i>&nbsp;Articulos</a></li>
                             <li class="divider-vertical"></li>
-					<li><a href="member.php"><i class="icon-group icon-large"></i>&nbsp;Member</a></li>
+					<li><a href="alumnos.php"><i class="icon-group icon-large"></i>&nbsp;Alumnos</a></li>
                             <li class="divider-vertical"></li>
 					<li><a href="archive.php"><i class="icon-list-alt icon-large"></i>&nbsp;Archive</a></li>
                             <li class="divider-vertical"></li>

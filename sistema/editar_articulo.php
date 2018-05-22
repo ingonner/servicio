@@ -67,7 +67,6 @@
 				<option>Antiguo</option>
 				<option>Perdido</option>
 				<option>Dañado</option>
-				<option>Requiere reemplazo</option>
 			</select>
 			</div>
 		</div>
