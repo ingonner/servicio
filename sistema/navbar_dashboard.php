@@ -22,9 +22,9 @@
                             <li class="divider-vertical"></li>
 					<li><a href="alumnos.php"><i class="icon-group icon-large"></i>&nbsp;Alumnos</a></li>
                             <li class="divider-vertical"></li>
-					<li><a href="archive.php"><i class="icon-list-alt icon-large"></i>&nbsp;Archive</a></li>
+					<li><a href="archivo.php"><i class="icon-list-alt icon-large"></i>&nbsp;Archivo</a></li>
                             <li class="divider-vertical"></li>
-					<li><a href="#myModal" data-toggle="modal"><i class="icon-search icon-large"></i>&nbsp;Advance Search</a></li>
+					<li><a href="#myModal" data-toggle="modal"><i class="icon-search icon-large"></i>&nbsp;Busqueda Avanzada</a></li>
                             <li class="divider-vertical"></li>					
 
 					<!-- <li><a href="section.php"><i class="icon-group icon-large"></i>&nbsp;Sections</a></li> -->
@@ -41,5 +41,5 @@
             </div>
         </div>
 		
-<?php include('search_form.php'); ?>
+<?php include('modal_busqueda_avanzada.php'); ?>
  

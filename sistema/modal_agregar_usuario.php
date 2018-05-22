@@ -5,7 +5,7 @@
 			<div class="control-group">
 				<label class="control-label" for="inputEmail">Nombre de usuario</label>
 				<div class="controls">
-				<input type="text" id="inputEmail" name="username" placeholder="Username" required>
+				<input type="text" id="inputEmail" name="username" placeholder="Username" autocomplete="off" required>
 				</div>
 			</div>
 			<div class="control-group">
@@ -17,13 +17,13 @@
 				<div class="control-group">
 				<label class="control-label" for="inputEmail">Nombre</label>
 				<div class="controls">
-				<input type="text" id="inputEmail" name="nombre" placeholder="Username" required>
+				<input type="text" id="inputEmail" name="nombre" placeholder="Username" autocomplete="off" required>
 				</div>
 			</div>
 				<div class="control-group">
 				<label class="control-label" for="inputEmail">Apellido</label>
 				<div class="controls">
-				<input type="text" id="inputEmail" name="apellido" placeholder="Username" required>
+				<input type="text" id="inputEmail" name="apellido" placeholder="Username" autocomplete="off" required>
 				</div>
 			</div>
 			<div class="control-group">

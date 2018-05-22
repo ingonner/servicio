@@ -26,7 +26,7 @@
 			<label class="control-label" for="inputPassword">Categoría</label>
 			<div class="controls">
 			<select name="id_categoria">
-			<option></option>
+		
 			<?php
 			$cat_query = mysql_query("select * from categorias");
 			while($cat_row = mysql_fetch_array($cat_query)){
@@ -66,7 +66,7 @@
 			<label class="control-label" for="inputPassword">Estatus:</label>
 			<div class="controls">
 			<select name="estatus" required>
-				<option></option>
+			
 				<option>Nuevo</option>
 				<option>Antiguo</option>
 				<option>Perdido</option>
