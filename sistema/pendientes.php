@@ -56,17 +56,13 @@
                                     <a rel="tooltip"  title="Marcar como entregado" id="<?php echo $detalle_prestamos; ?>" href="#devolucion<?php echo $id_detalle_prestamos; ?>" data-toggle="modal"    class="btn btn-success"><i class="icon-check icon-large"></i>Entreg.</a>
                                     <?php include('modal_devolver.php'); ?>
                                          
-                                    
-                                    <a>----></a>     
+                                 
                                          
-                                    <a rel="tooltip"  title="Reportar problema" id="<?php echo $id; ?>" href="#reportar_articulo<?php echo $id; ?>" data-toggle="modal"    class="btn btn-danger"><i class="icon-check icon-large"></i> Hay un probl.</a>
-                                    <?php include('modal_reportar articulo.php'); ?>
+                                    <a rel="tooltip"  title="Reportar problema"id="<?php echo $detalle_prestamos; ?>" href="#reportar_articulo<?php echo $id; ?>" data-toggle="modal"    class="btn btn-danger"><i class="icon-check icon-large"></i> Hay un probl.</a>
+                                    <?php include('modal_reportar_articulo.php'); ?>
                                     </td>
                                                     
-                                            
-                                  
-                                        
-									 
+                                   
                                     </tr>
 									<?php  }  ?>
                                 </tbody>
