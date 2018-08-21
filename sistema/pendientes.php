@@ -58,7 +58,7 @@
                                          
                                  
                                          
-                                    <a rel="tooltip"  title="Reportar problema"id="<?php echo $detalle_prestamos; ?>" href="#reportar_articulo<?php echo $id; ?>" data-toggle="modal"    class="btn btn-danger"><i class="icon-check icon-large"></i> Hay un probl.</a>
+                                    <a rel="tooltip"  title="Reportar problema"id="<?php echo $detalle_prestamos; ?>" href="#reportar_articulo<?php echo $id_detalle_prestamos; ?>" data-toggle="modal"    class="btn btn-danger"><i class="icon-check icon-large"></i> Hay un probl.</a>
                                     <?php include('modal_reportar_articulo.php'); ?>
                                     </td>
                                                     

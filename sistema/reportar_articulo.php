@@ -1,11 +1,9 @@
+
 <?php 
-include('dbcon.php');
+
 
 $id=$_GET['id'];
 $id_articulo = $_GET['id_articulo'];
-
-mysql_query("update prestamos LEFT JOIN detalle_prestamos on prestamos.id_prestamo = detalle_prestamos.id_prestamo  set estatus_prestamo='devuelto',fecha_entregado = NOW() where prestamos.id_prestamo='$id' and detalle_prestamos.id_articulo = '$id_articulo'")or die(mysql_error());						
- header('location:pendientes.php');
 
 ?>
 
@@ -21,16 +19,16 @@ mysql_query("update prestamos LEFT JOIN detalle_prestamos on prestamos.id_presta
                 <p><a href="pendientes.php" class="btn btn-info"><i class="icon-arrow-left icon-large"></i>&nbsp;Regresar</a></p>
 	<div class="addstudent">
 	<div class="details">Ingresa los datos del incidente</div>		
-	<form class="form-horizontal" method="POST" action="guardar_reporte.php" enctype="multipart/form-data">
+	<form class="form-horizontal" method="POST" action="guardar_reporte.php<?php echo '?id='.$id; ?>&<?php echo 'id_articulo='.$id_articulo; ?>" enctype="multipart/form-data">
 			
 		
 		<div class="control-group">
 			<label class="control-label" for="inputPassword">Estado del material/herramienta:</label>
 			<div class="controls">
 			<select name="problema" required>
-				<option>Dañado</option>                
-				<option>Perdido</option>
-                <option>No lo devolvió</option>
+				<option value="1">Dañado</option>                
+				<option value="2">Perdido</option>
+                <option value="3">No lo devolvió</option>
 			</select>
 			</div>
 		</div>
