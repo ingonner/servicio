@@ -45,10 +45,10 @@
                                     <td><?php echo $row['nombre']; ?></td> 
                                     <td><?php echo $row['apellido']; ?></td> 
                                     <td width="100">
-                                        <a rel="tooltip"  title="Borrar" id="<?php echo $id; ?>"  href="#delete_user<?php echo $id; ?>" data-toggle="modal"  class="btn btn-danger"><i class="icon-trash icon-large"></i></a>
+                                        <a rel="tooltip"  title="Borrar" id="<?php echo $id; ?>"  href="#borrar_usuario<?php echo $id; ?>" data-toggle="modal"  class="btn btn-danger"><i class="icon-trash icon-large"></i></a>
                                         <?php include('modal_borrar_usuario.php'); ?>
 										<a rel="tooltip"  title="Editar" id="e<?php echo $id; ?>" href="#edit<?php echo $id; ?>" data-toggle="modal" class="btn btn-success"><i class="icon-pencil icon-large"></i></a>
-                                    	<?php include('modal_edit_user.php'); ?>
+                                    	<?php include('modal_editar_usuario.php'); ?>
 									</td>
 									<?php include('barra_editar_borrar.php'); ?>
 									     <!-- Modal edit user -->
