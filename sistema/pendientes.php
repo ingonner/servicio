@@ -5,10 +5,12 @@
 		<div class="margin-top">
 			<div class="row">	
 				<div class="span12">		
-						<div class="alert alert-info"><strong>Articulos prentados</strong></div>
-                            <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
+					
+                    <div class="alert alert-info"><strong>Articulos prestados</strong></div>
+                            
+                   <table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="example">
 								<div class="pull-right">
-								<a href="" onclick="window.print()" class="btn btn-info"><i class="icon-print icon-large"></i> Imprimir</a>
+								<a href="" onclick="window.print()" class="btn btn-info"><i class="icon-print icon-large"></i> Imprimir reporte</a>
 								</div>
                                 <thead>
                                     <tr>
@@ -47,10 +49,23 @@
                                     <td><?php echo $row['num_control']; ?></td>
 									<td><?php echo $row['fecha_prestamo']; ?></td> 
                                     <td><?php echo $row['fecha_devolucion']; ?> </td>
+                                    <?php include('barra_editar_borrar.php'); ?>    
 									
-                                    	<td> <a rel="tooltip"  title="Marcar como entregado" id="<?php echo $detalle_prestamos; ?>" href="#delete_book<?php echo $id_detalle_prestamos; ?>" data-toggle="modal"    class="btn btn-success"><i class="icon-check icon-large"></i>Entreg.</a>
+                                     <td class="action">
+                                         
+                                    <a rel="tooltip"  title="Marcar como entregado" id="<?php echo $detalle_prestamos; ?>" href="#devolucion<?php echo $id_detalle_prestamos; ?>" data-toggle="modal"    class="btn btn-success"><i class="icon-check icon-large"></i>Entreg.</a>
                                     <?php include('modal_devolver.php'); ?>
-                                    <td></td>
+                                         
+                                    
+                                    <a>----></a>     
+                                         
+                                    <a rel="tooltip"  title="Reportar problema" id="<?php echo $id; ?>" href="#reportar_articulo<?php echo $id; ?>" data-toggle="modal"    class="btn btn-danger"><i class="icon-check icon-large"></i> Hay un probl.</a>
+                                    <?php include('modal_reportar articulo.php'); ?>
+                                    </td>
+                                                    
+                                            
+                                  
+                                        
 									 
                                     </tr>
 									<?php  }  ?>

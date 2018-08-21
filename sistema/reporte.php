@@ -5,10 +5,10 @@
 		<div class="margin-top">
 			<div class="row">	
 				<div class="span12">		
-						<div class="alert alert-info"><strong>Borrowed Books</strong></div>
-                            <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
+						<div class="alert alert-info"><strong>Historial de prestamos</strong></div>
+                             <table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="example">
 								<div class="pull-right">
-								<a href="" onclick="window.print()" class="btn btn-info"><i class="icon-print icon-large"></i> Print</a>
+								<a href="" onclick="window.print()" class="btn btn-info"><i class="icon-print icon-large"></i> Imprimir reporte</a>
 								</div>
                                 <thead>
                                     <tr>
@@ -46,8 +46,7 @@
 									<td><?php echo $row['fecha_prestamo']; ?></td> 
                                     <td><?php echo $row['fecha_devolucion']; ?> </td>
 									<td><?php echo $row['fecha_entregado']; ?> </td>
-                                    <td></td> 
-									 
+                                									 
                                     </tr>
 									<?php  }  ?>
                                 </tbody>

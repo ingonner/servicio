@@ -1,6 +1,6 @@
-	<div id="devolucion<?php echo $id_detalle_prestamos ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div id="reportar_articulo<?php echo $id_detalle_prestamos ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-body">
-			<div class="alert alert-success">¿Confirmas la devolución del articulo?</div>
+			<div class="alert alert-success">¿Deseas registrar un problema con la devolución de éste articulo?</div>
 
 		</div>
 		<div class="modal-footer">
