@@ -28,6 +28,8 @@
 				</select>
 				</div>
 			</div>
+            
+            <p>Si el alumno no aparece, probablemente esté bloqueado!!!</p>
 				<div class="control-group"> 
 					<label class="control-label" for="inputEmail">Fecha a devolver</label>
 					<div class="controls">
@@ -37,7 +39,7 @@
 				<div class="control-group"> 
 					<div class="controls">
 
-								<button name="delete_student" class="btn btn-success"><i class="icon-plus-sign icon-large"></i> Realizar prestamo</button>
+				<button name="delete_student" class="btn btn-success"><i class="icon-plus-sign icon-large"></i> Realizar prestamo</button>
 					</div>
 				</div>
 				</div>
@@ -92,11 +94,11 @@
 			</div>		
 <script>		
 $(".uniform_on").change(function(){
-    var max= 3;
+    var max= 10;
     if( $(".uniform_on:checked").length == max ){
 	
         $(".uniform_on").attr('disabled', 'disabled');
-		         alert('3 Books are allowed per borrow');
+		         alert('Puedes prestar máximo 10 articulos por transacción');
         $(".uniform_on:checked").removeAttr('disabled');
 		
     }else{

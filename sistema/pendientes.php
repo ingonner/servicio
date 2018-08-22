@@ -5,7 +5,7 @@
 		<div class="margin-top">
 			<div class="row">	
 				<div class="span12">		
-					
+	<!--	<form method="post" action="varias_devoluciones.php">	        -->		
                     <div class="alert alert-info"><strong>Articulos prestados</strong></div>
                             
                    <table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="example">
@@ -21,7 +21,13 @@
                                         <th>Fecha del prestamo</th>                                 
                                         <th>Fecha de devolución</th>                                
                                         <th>Fecha de entregado</th>
-
+                               <!--         <th>
+                                       <div class="control-group"> <div class="controls">
+				                        <button name="delete_student" class="btn btn-success"><i class="icon-plus-sign"></i> Entregar seleccion</button>
+					                     </div></div>
+                                        <?php include('modal_devolver.php'); ?>
+                                        </th>
+                                -->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -61,13 +67,18 @@
                                     <a rel="tooltip"  title="Reportar problema"id="<?php echo $detalle_prestamos; ?>" href="#reportar_articulo<?php echo $id_detalle_prestamos; ?>" data-toggle="modal"    class="btn btn-danger"><i class="icon-check icon-large"></i> Hay un probl.</a>
                                     <?php include('modal_reportar_articulo.php'); ?>
                                     </td>
-                                                    
+                         <!--               
+                                    <td width="10">
+								    <input id="" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id_articulo; ?><?php echo $id_detalle_prestamos; ?>">
+												
+                                    </td>
+                        -->                            
                                    
                                     </tr>
 									<?php  }  ?>
                                 </tbody>
                             </table>
 							
-
+     <!--               </form>   -->
 			</div>		
 	
