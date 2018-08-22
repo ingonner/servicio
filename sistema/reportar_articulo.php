@@ -32,6 +32,14 @@ $id_articulo = $_GET['id_articulo'];
 			</select>
 			</div>
 		</div>
+        
+        <div class="control-group">
+			<label class="control-label" for="text">Detalle del daño:</label>
+			<div class="controls">
+			<textarea name="detalle" rows="3" cols="40">Escribe aquí tus comentarios si deseas agregar...</textarea>
+
+			</div>
+		</div>
 	
         
         <div class="control-group">
