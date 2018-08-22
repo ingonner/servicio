@@ -12,8 +12,8 @@
 						<!--  -->
 								    <ul class="nav nav-pills">
 										<li   class="active"><a href="articulos.php">Todos</a></li>
-										<li><a href="articulos_nuevos.php">Articulos nuevos</a></li>
-										<li><a href="articulos_antiguos.php">Articulos antiguos</a></li>
+                            <!-- 		<li><a href="articulos_nuevos.php">Articulos nuevos</a></li>
+				  					    <li><a href="articulos_antiguos.php">Articulos antiguos</a></li>    -->	
 										<li><a href="articulos_perdidos.php">Articulos perdidos</a></li>
 										<li><a href="articulos_danados.php">Articulos dañados</a></li>
 									
@@ -77,9 +77,10 @@
 									<?php include('barra_editar_borrar.php'); ?>
                                     
                                         <td class="action">
+                                        <a  rel="tooltip"  title="Editar" id="e<?php echo $id; ?>" href="editar_articulo.php<?php echo '?id='.$id; ?>" class="btn btn-success"><i class="icon-pencil icon-large"></i></a>
+                                            
                                         <a rel="tooltip"  title="Eliminar" id="<?php echo $id; ?>" href="#borrar_articulo<?php echo $id; ?>" data-toggle="modal"    class="btn btn-danger"><i class="icon-trash icon-large"></i></a>
                                         <?php include('modal_borrar_articulo.php'); ?>
-										<a  rel="tooltip"  title="Editar" id="e<?php echo $id; ?>" href="editar_articulo.php<?php echo '?id='.$id; ?>" class="btn btn-success"><i class="icon-pencil icon-large"></i></a>
 										
                                     </td>
 									

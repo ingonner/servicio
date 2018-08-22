@@ -19,7 +19,7 @@
 				<select name="id_alumno" class="chzn-select"required/>
 				<option></option>
 				
-                    <?php $result =  mysql_query("select * from alumnos")or die(mysql_error()); 
+                    <?php $result =  mysql_query("select * from alumnos where estatus ='Activo'")or die(mysql_error()); 
 				while ($row=mysql_fetch_array($result)){ ?>
 					<option value="<?php echo $row['id_alumno']; ?>"><?php echo $row['nombre']." ".$row['apellido']; ?>
                     </option>

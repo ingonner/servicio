@@ -85,9 +85,11 @@
 			<label class="control-label" for="inputPassword">Estatus:</label>
 			<div class="controls">
 				<select name="estatus" required>
-									<option><?php  echo $row['estatus']; ?></option>
-									<option>Activo</option>
-									<option>Baneado</option>
+                    
+             <!--       <option><?php  echo $row['estatus']; ?></option> -->
+                    <option>Activo</option>
+                    <option>Bloqueado</option>
+									
 				</select>
 			</div>
 		</div>

@@ -58,18 +58,7 @@
 			</div>
 		</div>	
 		
-		<div class="control-group">
-			<label class="control-label" for="inputPassword">Estatus:</label>
-			<div class="controls">
-			<select name="estatus">
-				<option><?php echo $row['estatus']; ?></option>
-				<option>Nuevo</option>
-				<option>Antiguo</option>
-				<option>Perdido</option>
-				<option>Dañado</option>
-			</select>
-			</div>
-		</div>
+		
 		
 		
 		<div class="control-group">

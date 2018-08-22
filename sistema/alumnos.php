@@ -42,10 +42,11 @@
 									<td><?php echo $row['estatus']; ?></td> 
 									<?php include('barra_editar_borrar.php'); ?>
                                     <td width="100">
+                                                                            
+										<a  rel="tooltip"  title="Editar" id="e<?php echo $id; ?>" href="editar_alumno.php<?php echo '?id='.$id; ?>" class="btn btn-success"><i class="icon-pencil icon-large"></i></a>
+                                        
                                         <a rel="tooltip"  title="Eliminar" id="<?php echo $id; ?>" href="#borrar_alumno<?php echo $id; ?>" data-toggle="modal"    class="btn btn-danger"><i class="icon-trash icon-large"></i></a>
                                         <?php include('modal_borrar_alumno.php'); ?>
-                                        
-										<a  rel="tooltip"  title="Editar" id="e<?php echo $id; ?>" href="editar_alumno.php<?php echo '?id='.$id; ?>" class="btn btn-success"><i class="icon-pencil icon-large"></i></a>
 										
                                     </td>
 									

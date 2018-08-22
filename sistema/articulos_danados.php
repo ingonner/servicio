@@ -12,8 +12,8 @@
 						<!--  -->
 								    <ul class="nav nav-pills">
 										<li><a href="articulos.php">Todos</a></li>
-										<li><a href="articulos_nuevos.php">Articulos nuevos</a></li>
-										<li><a href="articulos_antiguos.php">Articulos antiguos</a></li>
+                    <!--				<li><a href="articulos_nuevos.php">Articulos nuevos</a></li>
+				       	                <li><a href="articulos_antiguos.php">Articulos antiguos</a></li>  -->	
 										<li><a href="articulos_perdidos.php">Articulos perdidos</a></li>
 										<li  class="active"><a href="articulos_danados.php">Articulos dañados</a></li>
 										

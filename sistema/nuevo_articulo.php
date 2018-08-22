@@ -43,9 +43,7 @@
 	<input type="text"  class="span4" id="inputPassword" name="marca"  placeholder="Marca" required>
 			</div>
 		</div>
-		
-
-		
+				
 		
 
 		<div class="control-group">
@@ -66,11 +64,7 @@
 			<label class="control-label" for="inputPassword">Estatus:</label>
 			<div class="controls">
 			<select name="estatus" required>
-			
-				<option>Nuevo</option>
-				<option>Antiguo</option>
-				<option>Perdido</option>
-				<option>Dañado</option>
+			   <option>Nuevo</option>
 			</select>
 			</div>
 		</div>
