@@ -58,7 +58,14 @@
 			</div>
 		</div>	
 		
-		
+		<div class="control-group">
+			<label class="control-label" for="inputPassword" disabled>Estatus:</label>
+			<div class="controls">
+			<select name="estatus">
+				<option selected><?php echo $row['estatus']; ?></option>
+			</select>
+			</div>
+		</div>
 		
 		
 		<div class="control-group">
