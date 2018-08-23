@@ -22,67 +22,56 @@
 		<center class="title">
 						<h1>Articulos dañados</h1>
 						</center>
-                            <table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="example">
+            
+                  <table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="example">
 								<div class="pull-right">
-								<a href="" onclick="window.print()" class="btn btn-info"><i class="icon-print icon-large"></i> Imprimir</a>
+								<a href="" onclick="window.print()" class="btn btn-info"><i class="icon-print icon-large"></i> Imprimir reporte</a>
 								</div>
-								<p><a href="nuevo_articulo.php" class="btn btn-success"><i class="icon-plus"></i>&nbsp;Agregar articulo</a></p>
-							
+         <p><a href="nuevo_articulo.php" class="btn btn-success"><i class="icon-plus"></i>&nbsp;Agregar articulo</a></p>
                                 <thead>
                                     <tr>
-									    <th>ID Artic.</th>                                 
-                                        <th>Nombre artic.</th>                                 
-                                        <th>Categoría</th>
-										<th>Marca</th>
-										<th class="action">Cantidad</th>
-										<th>Descripc.</th>
-										<th>Añadido desde</th>
-										<th>Estatus</th>
-										<th class="action">Acción</th>		
+                                 <!--       <th>ID de articulo</th>     -->                            
+                                        <th>Nombre del art.</th>                                 
+                                        <th>Marca</th>                                 
+                                        <th>Fecha de devolucion</th>                                 
+                                        <th>Alumno</th>  
+                                        <th>Carrera</th> 
+                                        <th>Detalles</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 								 
-                                  <?php 
-
-
-								  $user_query=mysql_query("select * from articulos where estatus = 'Dañado'")or die(mysql_error());
-									while($row=mysql_fetch_array($user_query)){
-									$id=$row['id_articulo'];  
-									$id_categoria=$row['id_categoria'];
-									$ejemplares = $row['ejemplares'];
+                <?php $user_query=mysql_query("SELECT articulos.id_articulo, articulos.nombre_articulo, articulos.marca, fecha_devolucion, alumnos.nombre, alumnos.apellido, alumnos.carrera, alumnos.num_control, articulos_danados.detalle FROM `articulos_danados` INNER JOIN articulos ON articulos_danados.id_articulo = articulos.id_articulo INNER JOIN alumnos on alumnos.id_alumno = articulos_danados.id_alumno")or die(mysql_error());
 									
-									$detalle_prestamos = mysql_query("select * from detalle_prestamos where id_articulo = '$id' and estatus_prestamo = 'pendiente'");
-									$row11 = mysql_fetch_array($detalle_prestamos);
-									$count = mysql_num_rows($detalle_prestamos);
-									
-									$total =  $ejemplares  -  $count; 
-									
-                                        $cat_query = mysql_query("select * from categorias where id_categoria = '$id_categoria'")or die(mysql_error());
-											$cat_row = mysql_fetch_array($cat_query);
+                                    
+            while($row=mysql_fetch_array($user_query)){									
+                            //      $id_articulo=$row['id_articulo'];  
+									$nombre_articulo=$row['nombre_articulo'];
+                                    $marca=$row['marca']; 
+                                    $fecha_devolucion=$row['fecha_devolucion'];
+                                    $nombre_alumno=$row['nombre'];
+                                    $apellido_alumno=$row['apellido']; 
+                                    $num_control=$row['num_control']; 
+                                    $carrera=$row['carrera'];
+                                    $detalle=$row['detalle'];
+                                    
+								
 									?>
                                     
 									<tr class="del<?php echo $id ?>">
-                                    <td><?php echo $row['id_articulo']; ?></td>
+                                        
+                                        
+                            <!--    <td><?php echo $row['id_articulo']; ?></td>    -->
                                     <td><?php echo $row['nombre_articulo']; ?></td>
-									<td><?php echo $cat_row ['nombre_categoria']; ?> </td>
-                                    <td><?php echo $row['marca']; ?> </td> 
-                                    <td class="action"><?php echo   $total;   ?> </td>
-                                     <td><?php echo $row['detalle']; ?></td>	
-									 <td><?php echo $row['fecha_agregado']; ?></td>
-									 <td><?php echo $row['estatus']; ?></td>
-									<?php include('barra_editar_borrar.php'); ?>
-                                    
-                                        <td class="action">
-                                        <a rel="tooltip"  title="Eliminar" id="<?php echo $id; ?>" href="#borrar_articulo<?php echo $id; ?>" data-toggle="modal"    class="btn btn-danger"><i class="icon-trash icon-large"></i></a>
-                                        <?php include('modal_borrar_articulo.php'); ?>
-										<a  rel="tooltip"  title="Editar" id="e<?php echo $id; ?>" href="editar_articulo.php<?php echo '?id='.$id; ?>" class="btn btn-success"><i class="icon-pencil icon-large"></i></a>
-										
-                                    </td>
-									
-                                    </tr>
+									<td><?php echo $row ['marca']; ?> </td>
+                                    <td><?php echo $row['fecha_devolucion']; ?> </td> 
+                                    <td><?php echo $row['nombre']." ".$row['apellido']." -- ".$row['num_control']; ?></td>   
+                                    <td><?php echo $row['carrera']; ?> </td> 
+                                    <td><?php echo $row['detalle']; ?> </td>    
+                                     
+        
+                                     </tr>
 									<?php  }  ?>
-                           
                                 </tbody>
                             </table>
 							
