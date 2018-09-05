@@ -11,7 +11,13 @@
                                 </div>
                             <table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="example">
                              
-								<p><a href="nuevo_alumno.php" class="btn btn-success"><i class="icon-plus"></i>&nbsp;Nuevo alumno</a></p>
+								<p>
+                                    <a href="nuevo_alumno.php" class="btn btn-success"><i class="icon-plus"></i>&nbsp;Nuevo alumno</a>
+                                    
+                                     <a href="#subir_semestre" title="Subir un semestre a todos los alumnos" class="btn btn-warning"  data-toggle="modal" ><i class="icon-plus"></i>Subir un Semestre</a>
+                                     <?php include('modal_subir_semestre.php'); ?>
+                                
+                                </p>
 							
                                 <thead>
                                     <tr>

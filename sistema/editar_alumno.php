@@ -69,7 +69,7 @@
        	<div class="control-group">
 			<label class="control-label" for="inputPassword">Celular:</label>
 			<div class="controls">
-			<input type='tel' pattern="[0-9]{10,10}" class="search" name="celular" value="<?php echo $row['celular']; ?>" placeholder="10 digitos"  autocomplete="off"  maxlength="10" >
+			<input type='tel' pattern="[0-9]{10,10}" class="search" name="celular" value="<?php echo $row['celular']; ?>" placeholder="10 digitos"  autocomplete="off" minlength="10"  maxlength="10" >
 			</div>
 		</div>
         
