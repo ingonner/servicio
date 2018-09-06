@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-08-2018 a las 17:40:02
+-- Tiempo de generación: 06-09-2018 a las 04:56:11
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.6.24
 
@@ -103,6 +103,24 @@ INSERT INTO `alumnos` (`id_alumno`, `nombre`, `apellido`, `genero`, `num_control
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `archivo_alumnos`
+--
+
+CREATE TABLE `archivo_alumnos` (
+  `id_alumno` int(11) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `apellido` varchar(40) NOT NULL,
+  `genero` varchar(10) NOT NULL,
+  `num_control` varchar(15) NOT NULL,
+  `carrera` varchar(15) NOT NULL,
+  `celular` varchar(12) NOT NULL,
+  `semestre` varchar(2) NOT NULL,
+  `estatus` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `articulos`
 --
 
@@ -154,6 +172,13 @@ CREATE TABLE `categorias` (
   `id_categoria` int(11) NOT NULL,
   `nombre_categoria` varchar(50) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `categorias`
+--
+
+INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`) VALUES
+(1, 'Herramienta');
 
 -- --------------------------------------------------------
 
@@ -214,9 +239,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`user_id`, `username`, `password`, `nombre`, `apellido`) VALUES
-(1, 'rosita', 'fresita', 'Oscar', 'Maldonado'),
-(2, 'rosita', 'fresita', 'Oscar', 'Maldonado'),
-(3, 'rosita', 'fresita', 'Oscar', 'Maldonado');
+(1, 'rosita', 'fresita', 'Oscar', 'Maldonado');
 
 --
 -- Índices para tablas volcadas
@@ -226,6 +249,12 @@ INSERT INTO `usuarios` (`user_id`, `username`, `password`, `nombre`, `apellido`)
 -- Indices de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
+  ADD PRIMARY KEY (`id_alumno`);
+
+--
+-- Indices de la tabla `archivo_alumnos`
+--
+ALTER TABLE `archivo_alumnos`
   ADD PRIMARY KEY (`id_alumno`);
 
 --
@@ -292,6 +321,11 @@ ALTER TABLE `usuarios`
 ALTER TABLE `alumnos`
   MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 --
+-- AUTO_INCREMENT de la tabla `archivo_alumnos`
+--
+ALTER TABLE `archivo_alumnos`
+  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `articulos`
 --
 ALTER TABLE `articulos`
@@ -310,7 +344,7 @@ ALTER TABLE `articulos_perdidos`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `detalle_prestamos`
 --

@@ -22,7 +22,7 @@
                             <li class="divider-vertical"></li>
 					<li><a href="alumnos.php"><i class="icon-group icon-large"></i>&nbsp;Alumnos</a></li>
                             <li class="divider-vertical"></li>
-					<li><a href="archivo.php"><i class="icon-list-alt icon-large"></i>&nbsp;Archivo</a></li>
+					<li><a href="mantenimiento.php"><i class="icon-list-alt icon-large"></i>&nbsp;Mantenimiento</a></li>
                             <li class="divider-vertical"></li>
 					<li><a href="#myModal" data-toggle="modal"><i class="icon-search icon-large"></i>&nbsp;Busqueda Avanzada</a></li>
                             <li class="divider-vertical"></li>					

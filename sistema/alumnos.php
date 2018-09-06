@@ -33,7 +33,7 @@
                                 </thead>
                                 <tbody>
 								 
-                                  <?php  $user_query=mysql_query("select * from alumnos")or die(mysql_error());
+                                  <?php  $user_query=mysql_query("select * from alumnos where estatus!='Archivado'")or die(mysql_error());
 									while($row=mysql_fetch_array($user_query)){
 									$id=$row['id_alumno'];  ?>
 									<tr class="del<?php echo $id ?>">
