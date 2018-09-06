@@ -46,8 +46,8 @@
                                      <?php include('modal_archivar_alumnos.php'); ?></td>
                                         
                                         
-									<td> <a href="agregar_categoria.php" title="Añadir una categoría nueva" class="btn btn-success"  data-toggle="modal" ><i class="icon-plus"></i> Agregar categorías</a>
-                                     <?php include('modal_subir_semestre.php'); ?> </td>
+									<td>  <a href="nueva_categoria.php" class="btn btn-success"><i class="icon-plus"></i>&nbsp; Agregar una categoría</a>
+                                    </td>
                                         
                                     <td> <a href="#eliminar_articulos" title="Eliminar TODOS los artículos" class="btn btn-danger"  data-toggle="modal" ><i class="icon-trash"></i> Eliminar articulos</a>
                                      <?php include('modal_subir_semestre.php'); ?></td> 
@@ -68,7 +68,8 @@
                                   <td></td>
                                         
                                         
-									<td> </td>
+									 <td>  <a href="borrar_categoria.php" class="btn btn-danger"><i class="icon-trash"></i>&nbsp; Eliminar una categoría</a>
+                                    </td>
                                         
                                     <td> </td> 
 					
