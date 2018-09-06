@@ -41,23 +41,22 @@
                                         
                                     <td>  <a rel="tooltip"  title="Baja un semestre a TODOS los alumnos" href="#bajar_semestre" data-toggle="modal" class="btn btn-warning"><i class="icon-step-backward"></i> Bajar un semestre</a>
                                      <?php include('modal_bajar_semestre.php'); ?></td>
+                                        
+                                        <td>  <a href="archivo_alumnos.php" class="btn btn-success"  class="btn btn-success"><i class="icon-plus"></i>Mostrar alumnos eliminados</a> </td>
                                     
-                                     <td> <a href="#archivar_alumnos" title="Eliminar TODOS los alumnos" class="btn btn-danger"  data-toggle="modal" ><i class="icon-trash"></i> Eliminar Alumnos</a>
-                                     <?php include('modal_archivar_alumnos.php'); ?></td>
+                                    
                                         
                                         
 									<td>  <a href="nueva_categoria.php" class="btn btn-success"><i class="icon-plus"></i>&nbsp; Agregar una categoría</a>
                                     </td>
                                         
-                                    <td> <a href="#eliminar_articulos" title="Eliminar TODOS los artículos" class="btn btn-danger"  data-toggle="modal" ><i class="icon-trash"></i> Eliminar articulos</a>
-                                     <?php include('modal_subir_semestre.php'); ?></td> 
+                                    <td> <a href="#archivar_articulos" title="Eliminar TODOS los artículos" class="btn btn-danger"  data-toggle="modal" ><i class="icon-trash"></i> Eliminar articulos</a>
+                                     <?php include('modal_archivar_articulos.php'); ?></td> 
 					
                                     </tr>
                                     
                                     
-                                    
-                                    
-                                    
+                                   
                                     
                                     
 									<tr>
@@ -65,8 +64,9 @@
                                      <td>  <a rel="tooltip"  title="Sube un semestre a TODOS los alumnos" href="#subir_semestre" data-toggle="modal" class="btn btn-warning"><i class="icon-step-forward"></i> Subir un semestre</a>
                                      <?php include('modal_subir_semestre.php'); ?></td>
                                     
-                                  <td></td>
-                                        
+                                     <td> <a href="#archivar_alumnos" title="Eliminar TODOS los alumnos" class="btn btn-danger"  data-toggle="modal" ><i class="icon-trash"></i> Eliminar Alumnos</a>
+                                     <?php include('modal_archivar_alumnos.php'); ?></td>
+                                                                           
                                         
 									 <td>  <a href="borrar_categoria.php" class="btn btn-danger"><i class="icon-trash"></i>&nbsp; Eliminar una categoría</a>
                                     </td>

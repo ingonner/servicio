@@ -45,10 +45,6 @@
 								 
                                   <?php 
 
-							
-							
-									
-
 								  $user_query=mysql_query("select * from articulos where estatus != 'Archivado'")or die(mysql_error());
 									while($row=mysql_fetch_array($user_query)){
 									$id=$row['id_articulo'];  
