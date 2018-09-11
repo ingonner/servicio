@@ -11,7 +11,7 @@
 
 		<div class="span12">		
 
-		<form method="post" action="guardar_prestamo.php">
+<form method="post" action="guardar_prestamo.php">
 <div class="span3">
 <div class="control-group">
 				<label class="control-label" for="inputEmail">Nombre del alumno</label>
@@ -55,13 +55,13 @@
                                         <th>Categoría</th>
 										<th>Marca</th>
 										<th>Detalles</th>
-										<th>Estatus</th>
+										<th>Cantidad</th>
 										<th>Agregar</th>										
                                     </tr>
                                 </thead>
                                 <tbody>
 								 
-                                  <?php  $user_query=mysql_query("select * from articulos where estatus != 'Archivado' ")or die(mysql_error());
+                                  <?php  $user_query=mysql_query("select * from articulos where estatus != 'Archivado' AND ejemplares >= 1 ")or die(mysql_error());
 									while($row=mysql_fetch_array($user_query)){
 									$id=$row['id_articulo'];  
 									$cat_id=$row['id_categoria'];
@@ -76,13 +76,22 @@
                                     <td><?php echo $row['nombre_articulo']; ?></td>
 									<td><?php echo $cat_row ['nombre_categoria']; ?> </td> 
                                     <td><?php echo $row['marca']; ?> </td> 
-									 <td><?php echo $row['detalle']; ?></td>
-									  <td width=""><?php echo $row['estatus']; ?></td> 
-									<?php include('barra_editar_borrar.php'); ?>
-                                    <td width="20">
-												<input id="" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id; ?>" >
-												
+								    <td><?php echo $row['detalle']; ?></td>
+                                    <td>
+                                        <select style="width:50px" name="cantidad">
+                                            <option selected>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                        </select>
                                     </td>
+                                        
+                                    <td width="20"><input id="" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id,$cantidad; ?>"></td>
 									
                                     </tr>
 									<?php  }  ?>
