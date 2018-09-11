@@ -54,10 +54,7 @@
 		<div class="control-group">
 			<label class="control-label" for="inputPassword">Descripcion:</label>
 			<div class="controls">
-			
-                 <textarea autocomplete=off name="detalle" rows="3" cols="90" placeholder="Escribe aquí los detalles del artículo..." requerid ><?php echo $row['detalle']; ?></textarea>
-                
-                
+			<input type="text" class="span4"  id="inputPassword" name="detalle" value="<?php echo $row['detalle']; ?>" placeholder="Detalles del articulo" required>
 			</div>
 		</div>	
 		

@@ -7,28 +7,11 @@ $marca=$_POST['marca'];
 $ejemplares=$_POST['ejemplares'];
 $detalle=$_POST['detalle'];
 $estatus=$_POST['estatus'];
-    
-    
-if($marca == ''){
-    $marca = 'No registrado';
-}
-    
-if($ejemplares == ''){
-    $ejemplares= '1';
-}
-
-if($detalle== ''){
-    $detalle = 'No registrado';
-}
-
-if($estatus == ''){
-    $estatus = 'Nuevo';
-}
 								
 mysql_query("insert into articulos  (nombre_articulo,id_categoria,marca,ejemplares,detalle,fecha_agregado,estatus)
  values('$nombre_articulo','$id_categoria','$marca','$ejemplares','$detalle',NOW(),'$estatus')")or die(mysql_error());
  
  
-header('location:nuevo_articulo.php');
+header('location:articulos.php');
 }
 ?>	
