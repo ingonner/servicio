@@ -17,7 +17,7 @@
 		<div class="control-group">
 			<label class="control-label" for="inputEmail">Nombre del articulo:</label>
 			<div class="controls">
-			<input type="text" class="span4" id="inputEmail" name="nombre_articulo"  placeholder="Nombre del articulo" required>
+			<input type="text" class="span4" id="inputEmail" name="nombre_articulo" autocomplete="off" placeholder="Nombre del articulo" required>
 			</div>
 		</div>
 		
@@ -40,7 +40,7 @@
 		<div class="control-group">
 			<label class="control-label" for="inputEmail">Marca:</label>
 			<div class="controls">
-	<input type="text"  class="span4" id="inputPassword" name="marca"  placeholder="Marca" required>
+	<input type="text"  class="span4" id="inputPassword" name="marca" placeholder="Marca" autocomplete="off">
 			</div>
 		</div>
 				
@@ -49,21 +49,22 @@
 		<div class="control-group">
 			<label class="control-label" for="iionputPassword">Ejemplares:</label>
 			<div class="controls">
-			<input type="text" class="span1" id="inputPassword" name="ejemplares"  placeholder="3" required>
+			<input type="text" class="span1" id="inputPassword" name="ejemplares" autocomplete="off" placeholder="3">
 			</div>
 		</div>
 		
 		<div class="control-group">
 			<label class="control-label" for="inputPassword">Detalle:</label>
 			<div class="controls">
-			<input type="text"  class="span4" id="inputPassword" name="detalle"  placeholder="Descripcion del articulo" required>
+        <textarea autocomplete=off name="detalle" rows="3" cols="40" placeholder="Escribe aquí los detalles del artículo..."></textarea>
+
 			</div>
 		</div>
 
 		<div class="control-group">
 			<label class="control-label" for="inputPassword">Estatus:</label>
 			<div class="controls">
-			<select name="estatus" required>
+			<select name="estatus">
 			   <option>Nuevo</option>
 			</select>
 			</div>
