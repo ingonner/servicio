@@ -78,7 +78,7 @@
                                     <td><?php echo $row['marca']; ?> </td> 
 								    <td><?php echo $row['detalle']; ?></td>
                                     <td>
-                                        <select style="width:50px" name="cantidad">
+                                        <select style="width:50px" name="cantidad[]" value="<?php echo $cantidad?>">
                                             <option selected>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -88,10 +88,11 @@
                                             <option>7</option>
                                             <option>8</option>
                                             <option>9</option>
+                                            <option>10</option>
                                         </select>
                                     </td>
                                         
-                                    <td width="20"><input id="" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id,$cantidad; ?>"></td>
+                                    <td width="20"><input id="" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id?>"></td>
 									
                                     </tr>
 									<?php  }  ?>

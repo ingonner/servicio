@@ -24,16 +24,18 @@ if($detalle== ''){
 if($estatus == ''){
     $estatus = 'Nuevo';
 }
-
-    
-/*    
+ 
+ /*    
 mysql_query("insert into articulos  (nombre_articulo,id_categoria,marca,ejemplares,detalle,fecha_agregado,estatus)
  values('$nombre_articulo','$id_categoria','$marca','$ejemplares','$detalle',NOW(),'$estatus')")or die(mysql_error());
-*/
-    
+*/ 
+ 
+
+   
 mysql_query("insert into articulos  (nombre_articulo,id_categoria,marca,ejemplares,detalle,fecha_agregado,estatus)
- values('$nombre_articulo','3','No registrado','999','CAPACITORES CERAMICOS EN NANOFARADIOS',NOW(),'Nuevo')")or die(mysql_error());
-     
+ values('$nombre_articulo','3','No registrado','150','$nombre_articulo',NOW(),'Nuevo')")or die(mysql_error());
+
+
  
 header('location:nuevo_articulo.php');
 }

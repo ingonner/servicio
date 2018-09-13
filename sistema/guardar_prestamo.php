@@ -14,18 +14,7 @@
 	
 
 	<?php }else{
-	
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        /*
+
 	mysql_query("insert into prestamos (id_alumno,fecha_prestamo,fecha_devolucion) values ('$id_alumno',NOW(),'$fecha_devolucion')")or die(mysql_error());
 	$query = mysql_query("select * from prestamos order by id_prestamo DESC")or die(mysql_error());
 	$row = mysql_fetch_array($query);
@@ -39,11 +28,9 @@ for($i=0; $i < $N; $i++)
 
 }
 
-
-*/
+    
         
-        
-//header("location: prestamo.php");
+header("location: prestamo.php");
 }  
 ?>
 	

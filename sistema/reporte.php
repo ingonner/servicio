@@ -23,7 +23,7 @@
                                 </thead>
                                 <tbody>
 								 
-                                  <?php  $user_query=mysql_query("select prestamos.id_prestamo, articulos.id_articulo, id_detalle_prestamos, nombre_articulo, nombre, apellido, carrera,
+                                  <?php  $user_query=mysql_query("select cantidad, prestamos.id_prestamo, articulos.id_articulo, id_detalle_prestamos, nombre_articulo, nombre, apellido, carrera,
                                   fecha_prestamo, prestamos.fecha_devolucion, fecha_entregado
                                   from prestamos
 								LEFT JOIN alumnos ON prestamos.id_alumno = alumnos.id_alumno
@@ -40,7 +40,7 @@
 									<tr class="del<?php echo $id ?>">
 									
 									                              
-                                    <td><?php echo $row['nombre_articulo']; ?></td>
+                                    <td>(<?php echo $row['cantidad']; ?>) <?php echo $row['nombre_articulo']; ?></td>
                                     <td><?php echo $row['nombre']." ".$row['apellido']; ?></td>
                                     <td><?php echo $row['carrera']; ?></td>
 									<td><?php echo $row['fecha_prestamo']; ?></td> 

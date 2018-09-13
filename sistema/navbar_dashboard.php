@@ -13,20 +13,20 @@
                             
 					<li class="active"><a href="dashboard.php"><i class="icon-home icon-large"></i>&nbsp;Inicio</a></li>
                             <li class="divider-vertical"></li>
-					<li><a href="usuarios.php"><i class="icon-user icon-large"></i>&nbsp;Usuarios</a></li>
-					<?php 
-					include('dropdown.php');
-					?>
-                            <li class="divider-vertical"></li>
+					<li><a href="prestamo.php"><i class="icon-plus icon-large"></i>&nbsp;Nuevo</a></li>
+                             <li class="divider-vertical"></li>
+                            
+                    <li><a href="pendientes.php"><i class="icon-file icon-large"></i>&nbsp;Pendientes</a></li>
+                             <li class="divider-vertical"></li>
+                            
+                    <li><a href="reporte.php"><i class="icon-file icon-large"></i>&nbsp;Historal</a></li>
+                             <li class="divider-vertical"></li>
+				
 					<li><a href="articulos.php"><i class="icon-book icon-large"></i>&nbsp;Articulos</a></li>
                             <li class="divider-vertical"></li>
 					<li><a href="alumnos.php"><i class="icon-group icon-large"></i>&nbsp;Alumnos</a></li>
                             <li class="divider-vertical"></li>
-                            
-                    <li class="divider-vertical"></li><li class="divider-vertical"></li>
-                    <li class="divider-vertical"></li><li class="divider-vertical"></li>  
-                            
-                            
+                     
                      <li><a href="mantenimiento.php"><i class="icon-list-alt icon-large"></i>&nbsp;Mantenimiento</a></li>
                             
                       <li class="divider-vertical"></li>
