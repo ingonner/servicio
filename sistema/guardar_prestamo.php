@@ -9,6 +9,7 @@
 	$fecha_devolucion = $_POST['fecha_devolucion'];
 
 	if ($id == '' ){ 
+        echo ("<br><br>ERROR, NO SELECCIONASTE NINGUN ARTICULO");        
 	//header("location: prestamo.php");
 	?>
 	

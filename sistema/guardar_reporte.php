@@ -19,7 +19,7 @@ if($accion_alumno == 'Si'){
   }   
     
 
-if($problema == 1 ) {
+if($problema < 2 ) {
     //echo("Dañado");
     
      mysql_query("INSERT INTO `articulos_danados`(`id_articulo`,`fecha_devolucion`,`detalle`,`id_alumno`) VALUES ('$id_articulo', NOW() ,'$detalle',(SELECT alumnos.id_alumno from alumnos LEFT JOIN prestamos on prestamos.id_alumno = alumnos.id_alumno where prestamos.id_prestamo='$id'))")or die (mysql_error());    
@@ -28,7 +28,7 @@ if($problema == 1 ) {
     header('location:pendientes.php');
 }     
     
-if($problema == 2 || 3 ) {
+if($problema > 1 ) {
     //echo("Perdido o no devuelto");
     
      mysql_query("INSERT INTO `articulos_perdidos`(`id_articulo`,`fecha_extravio`, `id_alumno`) VALUES ('$id_articulo',NOW(),(SELECT alumnos.id_alumno from alumnos LEFT JOIN prestamos on prestamos.id_alumno = alumnos.id_alumno where prestamos.id_prestamo='$id'))")or die (mysql_error());  

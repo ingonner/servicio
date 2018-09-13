@@ -46,8 +46,8 @@ $id_articulo = $_GET['id_articulo'];
 			<label class="control-label" for="inputPassword">¿Desea desactivar al alumno?</label>
 			<div class="controls">
 			<select name="accion_alumno">
-				<option>Si</option>
 				<option>No</option>
+                <option>Si</option>				
 			</select>
 			</div>
 		</div>

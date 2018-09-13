@@ -54,7 +54,7 @@
                                         <th>Nombre</th>                                 
                                         <th>Categoría</th>
 										<th>Marca</th>
-										<th>Detalles</th>
+									<!--	<th>Detalles</th> -->
 										<th>Cantidad</th>
 										<th>Agregar</th>										
                                     </tr>
@@ -76,7 +76,7 @@
                                     <td><?php echo $row['nombre_articulo']; ?></td>
 									<td><?php echo $cat_row ['nombre_categoria']; ?> </td> 
                                     <td><?php echo $row['marca']; ?> </td> 
-								    <td><?php echo $row['detalle']; ?></td>
+							<!--	    <td><?php echo $row['detalle']; ?></td> -->
                                     <td>
                                         <select style="width:50px" name="cantidad[]" value="<?php echo $cantidad?>">
                                             <option selected>1</option>
