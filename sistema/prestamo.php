@@ -11,7 +11,30 @@
 
 		<div class="span12">		
 
-<form method="post" action="guardar_prestamo.php">
+<!--    <form method="post" action="guardar_prestamo.php">   -->
+
+
+
+
+    <?php  
+$action = isset($_GET['action']) ? $_GET['action'] : "";
+$product_id = isset($_GET['product_id']) ? $_GET['product_id'] : "1";
+$name = isset($_GET['name']) ? $_GET['name'] : "";
+$quantity = isset($_GET['quantity']) ? $_GET['quantity'] : "1";
+            
+if($action=='added'){
+    echo "<div class='alert alert-info'>";
+        echo "<strong>{$name}</strong> ¡agregado a tu carrito!";
+    echo "</div>";
+}
+ 
+else if($action=='failed'){
+    echo "<div class='alert alert-info'>";
+        echo "<strong>{$name}</strong> No se pudo agregar a su carrito!";
+    echo "</div>";
+}
+?>
+            
 <div class="span3">
 <div class="control-group">
 				<label class="control-label" for="inputEmail">Nombre del alumno</label>
@@ -42,6 +65,10 @@
 				<button name="delete_student" class="btn btn-success"><i class="icon-plus-sign icon-large"></i> Realizar prestamo</button>
 					</div>
 				</div>
+            
+            <?php include('carro.php'); ?>
+            
+            
 				</div>
 				<div class="span8">
 						<div class="alert alert-success"><strong>Selecciona el (los) materiales a prestar...</strong></div>
@@ -49,8 +76,6 @@
 
                                 <thead>
                                     <tr>
-                       
-                                        <th>ID</th>                                 
                                         <th>Nombre</th>                                 
                                         <th>Categoría</th>
 										<th>Marca</th>
@@ -72,13 +97,16 @@
 									<tr class="del<?php echo $id ?>">
 									
 									                              
-                                    <td><?php echo $row['id_articulo']; ?></td>
-                                    <td><?php echo $row['nombre_articulo']; ?></td>
+                                    <td>
+                                     <div class='product-id' style='display:none;'><?php echo $row['id_articulo']; ?></div>
+                                     <div class='product-name'><?php echo $row['nombre_articulo']; ?></div>   
+                                    </td>
+                                    
 									<td><?php echo $cat_row ['nombre_categoria']; ?> </td> 
                                     <td><?php echo $row['marca']; ?> </td> 
 							<!--	    <td><?php echo $row['detalle']; ?></td> -->
                                     <td>
-                                        <select style="width:50px" name="cantidad[]" value="<?php echo $cantidad?>">
+                                        <select style="width:50px" name='quantity' class='form-control' value="<?php echo $cantidad?>">
                                             <option selected>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -92,31 +120,41 @@
                                         </select>
                                     </td>
                                         
-                                    <td width="20"><input id="" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id?>"></td>
-									
+                                   
+									<td>
+                                        <button class='btn btn-primary add-to-cart'>
+                                            <span class='glyphicon glyphicon-shopping-cart'></span> Añadir
+                                        </button>
+                                        </td>
                                     </tr>
 									<?php  }  ?>
                                 </tbody>
                             </table>
 							
-			    </form>
+			  
 			</div>		
 			</div>		
-<script>		
-$(".uniform_on").change(function(){
-    var max= 10;
-    if( $(".uniform_on:checked").length == max ){
-	
-        $(".uniform_on").attr('disabled', 'disabled');
-		         alert('Puedes prestar máximo 10 articulos por transacción');
-        $(".uniform_on:checked").removeAttr('disabled');
-		
-    }else{
 
-         $(".uniform_on").removeAttr('disabled');
-    }
-})
-</script>		
+            
+
+<script>
+$(document).ready(function(){
+    $('.add-to-cart').click(function(){
+        var id = $(this).closest('tr').find('.product-id').text();
+        var name = $(this).closest('tr').find('.product-name').text();
+        var quantity = $(this).closest('tr').find('select').val();
+        window.location.href = "agregar_carro.php?id=" + id + "&name=" + name + "&quantity=" + quantity;
+    });
+     
+    $('.update-quantity').click(function(){
+        var id = $(this).closest('tr').find('.product-id').text();
+        var name = $(this).closest('tr').find('.product-name').text();
+        var quantity = $(this).closest('tr').find('input').val();
+        window.location.href = "actualizar.php?id=" + id + "&name=" + name + "&quantity=" + quantity;
+    });
+});
+</script>            
+            
 			</div>
 		</div>
     </div>
