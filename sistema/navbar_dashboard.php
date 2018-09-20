@@ -45,5 +45,5 @@
             </div>
         </div>
 		
-
+<?php include('modal_busqueda_avanzada.php'); ?>
  

@@ -2,11 +2,7 @@
 // connect to database
 include 'database.php';
  
-// page headers
-$page_title="Carrito";
-include 'header.php';
- 
-// parameters
+
 $action = isset($_GET['action']) ? $_GET['action'] : "";
 $name = isset($_GET['name']) ? $_GET['name'] : "";
  

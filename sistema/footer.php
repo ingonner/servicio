@@ -2,10 +2,7 @@
 		<link href="vendors/uniform.default.css" rel="stylesheet" media="screen">
         <script src="vendors/chosen.jquery.min.js"></script>
         <script src="vendors/bootstrap-datepicker.js"></script>
-        
-
-
-<script>
+        <script>
         $(function() {
 <!--             $(".datepicker").datepicker(); -->
 <!--             $(".uniform_on").uniform() -->;

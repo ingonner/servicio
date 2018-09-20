@@ -65,13 +65,14 @@ else if($action=='failed'){
 
 					</div>
 				</div>
+                </div>
               </form>	
             
             
             <?php include('carro.php'); ?>
             
             
-				</div>
+				
 				<div class="span8">
 						<div class="alert alert-success"><strong>Selecciona el (los) materiales a prestar...</strong></div>
                    <div class="control-group">

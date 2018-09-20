@@ -14,7 +14,7 @@
 			<link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
 	
 	<!-- js -->			
-   <script src="../js/jquery-1.7.2.min.js"></script>
+    <script src="../js/jquery-1.7.2.min.js"></script>
     <script src="../js/bootstrap.js"></script>
 	 <script src="../js/jquery.hoverdir.js"></script>
 			

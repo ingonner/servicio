@@ -5,7 +5,7 @@
 		<div class="margin-top">
 			<div class="row">	
 				<div class="span12">		
-	<!--	<form method="post" action="varias_devoluciones.php">	        -->		
+
                     <div class="alert alert-info"><strong>Articulos prestados</strong></div>
                             
                    <table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="example">
@@ -21,13 +21,7 @@
                                         <th>Fecha del prestamo</th>                                 
                                         <th>Fecha de devolución</th>                                
                                         <th>Fecha de entregado</th>
-                               <!--         <th>
-                                       <div class="control-group"> <div class="controls">
-				                        <button name="delete_student" class="btn btn-success"><i class="icon-plus-sign"></i> Entregar seleccion</button>
-					                     </div></div>
-                                        <?php include('modal_devolver.php'); ?>
-                                        </th>
-                                -->
+                            
                                     </tr>
                                 </thead>
                                 <tbody>
