@@ -16,11 +16,11 @@ $query = mysql_query("insert into cart_items (product_id,quantity,user_id, creat
 
 // if database insert succeeded
 if($query){
-    header('Location: prestamo.php?action=added&id=' . $id . '&name=' . $name);
+    header('Location: prestamo2.php?action=added&id=' . $id . '&name=' . $name);
 }
  
 // if database insert failed
 else{
-     header('Location: prestamo.php?action=failed&id=' . $id . '&name=' . $name);
+     header('Location: prestamo2.php?action=failed&id=' . $id . '&name=' . $name);
 }
  

@@ -65,6 +65,8 @@ else if($action=='failed'){
 
 					</div>
 				</div>
+              </form>	
+            
             
             <?php include('carro.php'); ?>
             
@@ -72,65 +74,42 @@ else if($action=='failed'){
 				</div>
 				<div class="span8">
 						<div class="alert alert-success"><strong>Selecciona el (los) materiales a prestar...</strong></div>
-                            <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
-
-                                <thead>
-                                    <tr>
-                                        <th>Nombre</th>                                 
-                                        <th>Categoría</th>
-										<th>Marca</th>
-									<!--	<th>Detalles</th> -->
-										<th>Cantidad</th>
-										<th>Agregar</th>										
-                                    </tr>
-                                </thead>
-                                <tbody>
-								 
-                                  <?php  $user_query=mysql_query("select * from articulos where estatus != 'Archivado' AND ejemplares > 0 ")or die(mysql_error());
-									while($row=mysql_fetch_array($user_query)){
-									$id=$row['id_articulo'];  
-									$cat_id=$row['id_categoria'];
-
-											$cat_query = mysql_query("select * from categorias where id_categoria = '$cat_id'")or die(mysql_error());
-											$cat_row = mysql_fetch_array($cat_query);
-									?>
-									<tr class="del<?php echo $id ?>">
-									
-									                              
-                                    <td>
-                                     <div class='product-id' style='display:none;'><?php echo $row['id_articulo']; ?></div>
-                                     <div class='product-name'><?php echo $row['nombre_articulo']; ?></div>   
-                                    </td>
-                                    
-									<td><?php echo $cat_row ['nombre_categoria']; ?> </td> 
-                                    <td><?php echo $row['marca']; ?> </td> 
-							<!--	    <td><?php echo $row['detalle']; ?></td> -->
-                                    <td>
-                                        <select style="width:50px" name='quantity' class='form-control' value="<?php echo $cantidad?>">
-                                            <option selected>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
-                                            <option>7</option>
-                                            <option>8</option>
-                                            <option>9</option>
-                                            <option>10</option>
+                   <div class="control-group">
+				<label class="control-label" for="inputEmail">Buscar:</label>
+				<div class="controls">
+				
+                    
+               <select style="width:400px" name="id_articulo" id="product-id" class="chzn-select"required/>
+				<option></option>
+				
+                    <?php $result =  mysql_query("select * from articulos ORDER BY nombre_articulo DESC")or die(mysql_error()); 
+				while ($row=mysql_fetch_array($result)){ ?>
+					<option value="<?php echo $row['id_articulo']; ?>"><?php echo $row['nombre_articulo']; ?>
+                    </option>
+				<?php } ?>
+                    
+				</select>
+                        <select style="width:50px"  id='cantidad'>
+                                            <option selected value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
-                                    </td>
-                                        
-                                   
-									<td>
-                                        <button class='btn btn-primary add-to-cart'>
-                                            <span class='glyphicon glyphicon-shopping-cart'></span> Añadir
-                                        </button>
-                                        </td>
-                                    </tr>
-									<?php  }  ?>
-                                </tbody>
-                            </table>
-						    </form>	
+                       
+                       <button class='btn btn-primary add-to-cart'>
+                     <span class='glyphicon glyphicon-shopping-cart'></span> Añadir
+                       </button>
+				</div>
+			</div>
+			
+            
+          
 			  
 			</div>		
 			</div>		
@@ -140,9 +119,17 @@ else if($action=='failed'){
 <script>
 $(document).ready(function(){
     $('.add-to-cart').click(function(){
-        var id = $(this).closest('tr').find('.product-id').text();
-        var name = $(this).closest('tr').find('.product-name').text();
-        var quantity = $(this).closest('tr').find('select').val();
+   
+        
+        var id = document.getElementById("product-id").value;
+      
+        /* Para obtener el texto */
+        var combo = document.getElementById("product-id");
+        var name = combo.options[combo.selectedIndex].text
+        var quantity = document.getElementById('cantidad').value;
+      
+        //alert(id+","+name+","+quantity);
+        
         window.location.href = "agregar_carro.php?id=" + id + "&name=" + name + "&quantity=" + quantity;
     });
      
