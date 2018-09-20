@@ -4,6 +4,7 @@
 	<title>Prestamos de material</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap -->
+			<link rel="shortcut icon" href="media/favicon.ico" />
 			<link href="../css/bootstrap.css" rel="stylesheet" media="screen">
 			<link href="../css/bootstrap-responsive.css" rel="stylesheet" media="screen">
 			<link href="../css/docs.css" rel="stylesheet" media="screen">

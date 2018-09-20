@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-09-2018 a las 05:00:58
+-- Tiempo de generación: 20-09-2018 a las 05:56:48
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.6.24
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `prestamos`
+-- Base de datos: `sistema_bio`
 --
 
 -- --------------------------------------------------------
@@ -123,10 +123,6 @@ CREATE TABLE `articulos` (
 --
 
 INSERT INTO `articulos` (`id_articulo`, `nombre_articulo`, `id_categoria`, `marca`, `ejemplares`, `detalle`, `fecha_agregado`, `estatus`) VALUES
-(1, 'Cautin', 7, 'Pretul', 3, 'Lapiz para soldar', '2018-09-06 10:29:23', 'Archivado'),
-(2, 'Cautin', 7, 'Pretul', 2, 'Lapiz para soldar', '2018-09-06 14:15:59', 'Archivado'),
-(3, 'Resistencia 3 Ohms', 3, 'No registrado', 100, 'No registrado', '2018-09-06 14:49:22', 'Archivado'),
-(4, 'Resistencia 1K', 3, 'No registrado', 100, 'No registrado', '2018-09-06 14:51:57', 'Archivado'),
 (5, 'Generador', 7, 'INSTEC AFG-2125', 8, 'Generador de seÃ±ales', '2018-09-11 13:18:33', 'Nuevo'),
 (6, 'Fuente Variable', 7, 'PROTO-BOARD PB503', 8, 'Fuente variable de voltaje', '2018-09-11 13:22:01', 'Nuevo'),
 (7, 'Osciloscopio', 7, 'TEKTRONICS TBHS1042', 8, 'Osciloscopio', '2018-09-11 13:23:11', 'Nuevo'),
@@ -440,12 +436,20 @@ CREATE TABLE `articulos_perdidos` (
   `id_articulo` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `articulos_perdidos`
+-- Estructura de tabla para la tabla `cart_items`
 --
 
-INSERT INTO `articulos_perdidos` (`id`, `id_alumno`, `fecha_extravio`, `id_articulo`) VALUES
-(1, '57', '2018-09-06', 2);
+CREATE TABLE `cart_items` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `quantity` double NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -485,22 +489,6 @@ CREATE TABLE `detalle_prestamos` (
   `fecha_entregado` varchar(1000) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `detalle_prestamos`
---
-
-INSERT INTO `detalle_prestamos` (`id_detalle_prestamos`, `id_articulo`, `cantidad`, `id_prestamo`, `estatus_prestamo`, `fecha_devolucion`, `fecha_entregado`) VALUES
-(1, 2, 0, 1, 'devuelto', '', '2018-09-06 14:43:39'),
-(2, 2, 2, 2, 'devuelto', '', '2018-09-06 14:43:37'),
-(3, 2, 1, 3, 'devuelto', '', '2018-09-06 14:54:02'),
-(4, 3, 1, 3, 'devuelto', '', '2018-09-06 14:54:09'),
-(5, 4, 1, 3, 'devuelto', '', '2018-09-06 14:54:07'),
-(6, 2, 1, 4, 'devuelto', '', '2018-09-06 15:01:40'),
-(7, 3, 0, 4, 'devuelto', '', '2018-09-06 15:01:48'),
-(8, 2, 1, 5, 'devuelto', '', '2018-09-06 15:01:33'),
-(9, 3, 0, 5, 'devuelto', '', '2018-09-06 15:01:46'),
-(10, 4, 0, 5, 'devuelto', '', '2018-09-06 15:01:43');
-
 -- --------------------------------------------------------
 
 --
@@ -511,30 +499,7 @@ CREATE TABLE `prestamos` (
   `id_prestamo` int(11) NOT NULL,
   `id_alumno` bigint(50) NOT NULL,
   `fecha_prestamo` varchar(100) NOT NULL,
-  `fecha_devolucion` varchar(100) DEFAULT NULL,
-  `fe` varchar(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `prestamos`
---
-
-INSERT INTO `prestamos` (`id_prestamo`, `id_alumno`, `fecha_prestamo`, `fecha_devolucion`, `fe`) VALUES
-(1, 57, '2018-09-06 14:17:22', '06/09/2018', ''),
-(2, 57, '2018-09-06 14:43:22', '06/09/2018', ''),
-(3, 57, '2018-09-06 14:52:27', '06/09/2018', ''),
-(4, 1, '2018-09-06 14:56:09', '06/09/2018', ''),
-(5, 1, '2018-09-06 15:01:12', '06/09/2018', '');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tipo`
---
-
-CREATE TABLE `tipo` (
-  `id` int(11) NOT NULL,
-  `tipo_prestamo` varchar(50) DEFAULT NULL
+  `fecha_devolucion` varchar(100) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -556,7 +521,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`user_id`, `username`, `password`, `nombre`, `apellido`) VALUES
-(1, 'rosita', 'fresita', 'Oscar', 'Maldonado');
+(1, 'rosita', 'fresita', 'Oscar', 'Maldonado'),
+(2, 'admin', 'admin', 'Administrador', 'Administrador');
 
 --
 -- Índices para tablas volcadas
@@ -587,6 +553,12 @@ ALTER TABLE `articulos_perdidos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `cart_items`
+--
+ALTER TABLE `cart_items`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `categorias`
 --
 ALTER TABLE `categorias`
@@ -607,14 +579,6 @@ ALTER TABLE `prestamos`
   ADD PRIMARY KEY (`id_prestamo`),
   ADD KEY `borrowerid` (`id_alumno`),
   ADD KEY `borrowid` (`id_prestamo`);
-
---
--- Indices de la tabla `tipo`
---
-ALTER TABLE `tipo`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `borrowertype` (`tipo_prestamo`),
-  ADD KEY `id` (`id`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -645,7 +609,12 @@ ALTER TABLE `articulos_danados`
 -- AUTO_INCREMENT de la tabla `articulos_perdidos`
 --
 ALTER TABLE `articulos_perdidos`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `cart_items`
+--
+ALTER TABLE `cart_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `categorias`
 --
@@ -655,22 +624,17 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `detalle_prestamos`
 --
 ALTER TABLE `detalle_prestamos`
-  MODIFY `id_detalle_prestamos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_detalle_prestamos` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `prestamos`
 --
 ALTER TABLE `prestamos`
-  MODIFY `id_prestamo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT de la tabla `tipo`
---
-ALTER TABLE `tipo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_prestamo` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
