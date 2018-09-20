@@ -28,13 +28,13 @@ if($action=='removed'){
             
 if($action=='added'){
     echo "<div class='alert alert-info'>";
-        echo "<strong>{$name}</strong> ¡agregado a tu carrito!";
+        echo "<strong>{$name}</strong> ¡agregado!";
     echo "</div>";
 }
  
 else if($action=='failed'){
     echo "<div class='alert alert-info'>";
-        echo "<strong>{$name}</strong> No se pudo agregar a su carrito!";
+        echo "<strong>{$name}</strong> No se pudo agregar!";
     echo "</div>";
 }
 ?>
@@ -74,21 +74,35 @@ else if($action=='failed'){
 				</div>
 				
 				</form>
+
+
+
+
+
+
 <?php include('carro.php'); ?>
 </div>
-			<div class="span8">
+		
+
+
+
+
+
+
+
+        	<div class="span8">
 						<div class="alert alert-success"><strong>Selecciona el (los) materiales a prestar...</strong></div>
                    <div class="control-group">
 				<label class="control-label" for="inputEmail">Buscar:</label>
 				<div class="controls">
 				
                     
-               <select style="width:400px" name="id_articulo" id="product-id" class="chzn-select"required/>
+               <select style="width:600px" name="id_articulo" id="product-id" class="chzn-select"required/>
 				<option></option>
 				
-                    <?php $result =  mysql_query("select * from articulos ORDER BY nombre_articulo DESC")or die(mysql_error()); 
+                    <?php $result =  mysql_query("select id_articulo, nombre_articulo, marca from articulos ORDER BY nombre_articulo DESC")or die(mysql_error()); 
 				while ($row=mysql_fetch_array($result)){ ?>
-					<option value="<?php echo $row['id_articulo']; ?>"><?php echo $row['nombre_articulo']; ?>
+					<option value="<?php echo $row['id_articulo']; ?>"><?php echo $row['nombre_articulo'];?> (<?php echo $row['marca'];?>)
                     </option>
 				<?php } ?>
                     

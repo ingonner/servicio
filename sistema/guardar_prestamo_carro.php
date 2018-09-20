@@ -20,20 +20,19 @@
 	$N = $contar;
 
 
-for($i=0; $i < $N; $i++)
-{
+for($i=0; $i < $N; $i++) {
 
  	$query = mysql_query("select id, product_id, quantity from cart_items order by id DESC")or die(mysql_error());
 	$row = mysql_fetch_array($query);
     
 	//trae datos del carrito
-    $id = $row['product_id'];
+    $id = $row['id'];
 	$id_producto = $row['product_id']; 
     $cantidad = $row['quantity'];
 
 
     //inserta en detalle_prestamos las filas
-	 mysql_query("insert detalle_prestamos (id_articulo,cantidad,id_prestamo,estatus_prestamo) values('$id','$cantidad','$id_prestamo','pendiente')")or die(mysql_error());
+	 mysql_query("insert detalle_prestamos (id_articulo,cantidad,id_prestamo,estatus_prestamo) values('$id_producto','$cantidad','$id_prestamo','pendiente')")or die(mysql_error());
     
     //va borrando las filas, para insertar la siguiente en el siguiente ciclo
     mysql_query("DELETE FROM `cart_items` WHERE id='$id'")or die(mysql_error());
