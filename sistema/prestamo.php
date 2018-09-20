@@ -19,6 +19,12 @@ $action = isset($_GET['action']) ? $_GET['action'] : "";
 $product_id = isset($_GET['product_id']) ? $_GET['product_id'] : "1";
 $name = isset($_GET['name']) ? $_GET['name'] : "";
 $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : "1";
+
+if($action=='removed'){
+    echo "<div class='alert alert-info'>";
+        echo "<strong>{$name}</strong> fue eliminado de la lista!";
+    echo "</div>";
+}
             
 if($action=='added'){
     echo "<div class='alert alert-info'>";

@@ -9,7 +9,7 @@ $name = isset($_GET['name']) ? $_GET['name'] : "";
 // display a message
 if($action=='removed'){
     echo "<div class='alert alert-info'>";
-        echo "<strong>{$name}</strong> fue eliminado del carrito!";
+        echo "<strong>{$name}</strong> fue eliminado de la lista!";
     echo "</div>";
 }
  
@@ -21,7 +21,7 @@ else if($action=='quantity_updated'){
  
 else if($action=='failed'){
         echo "<div class='alert alert-info'>";
-        echo "<strong>{$name}</strong> no se pudo actualizar la cantidad!";
+        echo "<strong>{$name}</strong> no se pudo actualizar!";
     echo "</div>";
 }
  
@@ -66,7 +66,7 @@ if($num>0){
                         echo "<div class='product-name'>{$name}({$quantity})</div>";
             echo "</td>";
             echo "<td>";
-            echo "<a href='eliminar.php?id={$id}&name={$name}' class='btn btn-danger'>";
+            echo "<a href='eliminar_carro.php?id={$id}&name={$name}' class='btn btn-danger'>";
                         echo "<span class='glyphicon glyphicon-remove'></span> Quitar";
             echo "</a>";
             echo "</td>";
