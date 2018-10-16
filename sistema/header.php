@@ -3,6 +3,7 @@
 <head>
 	<title>Prestamos de material</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
 	<!-- Bootstrap -->
 			<link rel="shortcut icon" href="media/favicon.ico" />
 			<link href="../css/bootstrap.css" rel="stylesheet" media="screen">

@@ -22,7 +22,7 @@
                     <li><a href="reporte.php"><i class="icon-file icon-large"></i>&nbsp;Historal</a></li>
                              <li class="divider-vertical"></li>
 				
-					<li><a href="articulos.php"><i class="icon-book icon-large"></i>&nbsp;Articulos</a></li>
+					<li><a href="nuevo_articulo.php"><i class="icon-plus icon-large"></i>&nbsp;Articulos</a></li>
                             <li class="divider-vertical"></li>
 					<li><a href="alumnos.php"><i class="icon-group icon-large"></i>&nbsp;Alumnos</a></li>
                             <li class="divider-vertical"></li>

@@ -7,7 +7,11 @@
 			<div class="span12">	
 		
              <div class="alert alert-info">Agregar artículo</div>
-			<p><a href="articulos.php" class="btn btn-info"><i class="icon-arrow-left icon-large"></i>&nbsp;Atrás</a></p>
+			
+			<p><a href="articulos.php" class="btn btn-info"><i class="icon-arrow-left icon-large"></i>&nbsp;Atrás</a>
+                <a href="articulos.php" class="btn btn-success"><i class="icon-book icon-large"></i>&nbsp;Ver articulos</a>
+            </p>           
+
 	<div class="addstudent">
 	<div class="details">Ingresa los datos del articulo</div>		
 	<form class="form-horizontal" method="POST" action="guardar_articulo.php" enctype="multipart/form-data">

@@ -10,7 +10,9 @@
                                     <strong><i class="icon-user icon-large"></i>&nbsp;Control de alumnos</strong>
                                 </div>
                             <table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="example">
-                             
+                             <div class="pull-right">
+								<a href="" onclick="window.print()" class="btn btn-info"><i class="icon-print icon-large"></i> Imprimir</a>
+								</div>
 								<p>
                                     <a href="nuevo_alumno.php" class="btn btn-success"><i class="icon-plus"></i>&nbsp;Nuevo alumno</a>
                                     

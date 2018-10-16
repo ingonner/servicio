@@ -34,10 +34,8 @@
                                         <th>Nombre artic.</th>                                 
                                         <th>Categoría</th>
 										<th>Marca</th>
-										<th class="action">Cantidad</th>
-										<th>Descripc.</th>
-										<th>Añadido desde</th>
-										<th>Estatus</th>
+										<th>Cantidad</th>
+										<th>Descripc.</th>    
 										<th class="action">Acción</th>		
                                     </tr>
                                 </thead>
@@ -45,31 +43,26 @@
 								 
                                   <?php 
 
-								  $user_query=mysql_query("select * from articulos where estatus != 'Archivado'")or die(mysql_error());
+								  $user_query=mysql_query("select * from vista_articulos")or die(mysql_error());
 									while($row=mysql_fetch_array($user_query)){
 									$id=$row['id_articulo'];  
-									$id_categoria=$row['id_categoria'];
+									$nombre_articulo=$row['nombre_articulo'];
+									$nombre_categoria=$row['nombre_categoria'];
+									$marca=$row['marca'];
 									$ejemplares = $row['ejemplares'];
-									
-									$detalle_prestamos = mysql_query("select * from detalle_prestamos where id_articulo = '$id' and estatus_prestamo = 'pendiente'");
-									$row11 = mysql_fetch_array($detalle_prestamos);
-									$count = mysql_num_rows($detalle_prestamos);
-									
-									$total =  $ejemplares  -  $count; 
-									
-                                        $cat_query = mysql_query("select * from categorias where id_categoria = '$id_categoria'")or die(mysql_error());
-											$cat_row = mysql_fetch_array($cat_query);
+									$detalle=$row['detalle'];
+                                    
+
 									?>
                                     
 									<tr class="del<?php echo $id ?>">
                                     <td><?php echo $row['id_articulo']; ?></td>
                                     <td><?php echo $row['nombre_articulo']; ?></td>
-									<td><?php echo $cat_row ['nombre_categoria']; ?> </td>
+									<td><?php echo $row ['nombre_categoria']; ?> </td>
                                     <td><?php echo $row['marca']; ?> </td> 
-                                    <td class="action"><?php echo   $total;   ?> </td>
+                                   	<td><?php echo $row['ejemplares']; ?> </td>
                                      <td><?php echo $row['detalle']; ?></td>	
-									 <td><?php echo $row['fecha_agregado']; ?></td>
-									 <td><?php echo $row['estatus']; ?></td>
+						
 									<?php include('barra_editar_borrar.php'); ?>
                                     
                                         <td class="action">

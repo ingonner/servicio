@@ -3,7 +3,9 @@
 <head>
 	<title>Prestamos de material</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		 <meta name="sistema_bio"  content="text/html;" http-equiv="content-type" charset="utf-8">
 	<!-- Bootstrap -->
+			<link rel="shortcut icon" href="sistema/media/favicon.ico" />
 			<link href="css/bootstrap.css" rel="stylesheet" media="screen">
 			<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
 			<link href="css/docs.css" rel="stylesheet" media="screen">
