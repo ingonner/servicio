@@ -3,14 +3,14 @@
 <?php include('navbar_dashboard.php'); ?>
 <?php $get_id = $_GET['id']; ?>
     <div class="container">
-		<div class="margin-top">
+		<div class="margin-top">                
 			<div class="row">	
 			<div class="span12">	
-		<?php 
-		$query=mysql_query("select * from articulos LEFT JOIN categorias on categorias.id_categoria  = articulos.id_categoria where id_articulo='$get_id'")or die(mysql_error());
-		$row=mysql_fetch_array($query);
-		$id_categoria = $row['id_categoria'];
-		?>
+<?php 
+$query=mysql_query("select * from articulos LEFT JOIN categorias on categorias.id_categoria  = articulos.id_categoria where id_articulo='$get_id'")or die(mysql_error());
+$row=mysql_fetch_array($query);
+$id_categoria = $row['id_categoria'];
+?>
              <div class="alert alert-info"><i class="icon-pencil"></i>&nbsp;Editar articulo</div>
 			<p><a class="btn btn-info" href="articulos.php"><i class="icon-arrow-left icon-large"></i>&nbsp;Regresar</a></p>
 	<div class="addstudent">
@@ -67,6 +67,13 @@
 			<select name="estatus">
 				<option selected><?php echo $row['estatus']; ?></option>
 			</select>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label">QR:</label>
+			<div class="controls">
+                 <img src="qrgenerator.php?t=ID:<?php echo $get_id;?> <?php echo $row['nombre_articulo']; ?>" />
 			</div>
 		</div>
 		

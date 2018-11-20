@@ -26,7 +26,10 @@
 								<div class="pull-right">
 								<a href="" onclick="window.print()" class="btn btn-info"><i class="icon-print icon-large"></i> Imprimir</a>
 								</div>
-								<p><a href="nuevo_articulo.php" class="btn btn-success"><i class="icon-plus"></i>&nbsp;Agregar articulo</a></p>
+								<p>
+                                <a href="nuevo_articulo.php" class="btn btn-success"><i class="icon-plus"></i>&nbsp;Agregar articulo</a>
+                                <a href="ver_qr.php" class="btn btn-warning"><i class="icon-qrcode"></i>&nbsp;Ver códigos QR</a>
+                                </p>
 							
                                 <thead>
                                     <tr>

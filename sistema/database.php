@@ -1,5 +1,9 @@
 <?php
 $host = "localhost";
+//$db_name = "u834655291_inven";
+//$username = "u834655291_usr";
+//$password = "sspassword123";
+
 $db_name = "sistema_bio";
 $username = "root";
 $password = "";
