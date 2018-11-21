@@ -33,18 +33,28 @@
 								<?php
 								if (isset($_POST['submit'])){
 								session_start();
+
 								$username = $_POST['username'];
 								$password = $_POST['password'];
-								$query = "SELECT * FROM usuarios WHERE username='$username' AND password='$password'";
+		
+		$query = "SELECT id,hash_password FROM affiliate WHERE id='$username'";
 								$result = mysql_query($query)or die(mysql_error());
 								$num_row = mysql_num_rows($result);
-									$row=mysql_fetch_array($result);
-									if( $num_row > 0 ) {
-										header('location:dashboard.php');
-								$_SESSION['id']=$row['user_id'];
+								$row=mysql_fetch_array($result);
+
+								if( $num_row > 0 ) {
+								if (password_verify($password, $row['hash_password'])) {
+                   				header('location:dashboard.php');
+								$_SESSION['id']=$row['id'];
+                				} else {
+                    			echo "<div class='alert alert-danger'>Datos incorrectos</div>";
+                				}
+
+										
+								
 									}
 									else{ ?>
-								<div class="alert alert-danger">Datos incorrectos</div>		
+	<div class="alert alert-danger">Datos incorrectos</div>		
 								<?php
 								}}
 								?>

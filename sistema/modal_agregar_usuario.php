@@ -3,7 +3,7 @@
 			<div class="alert alert-info"><strong>Agregar usuario</strong></div>
 	<form class="form-horizontal" method="post">
 			<div class="control-group">
-				<label class="control-label" for="inputEmail">Nombre de usuario</label>
+				<label class="control-label" for="inputEmail">Nueva clave de acceso</label>
 				<div class="controls">
 				<input type="text" id="inputEmail" name="username" placeholder="Username" autocomplete="off" required>
 				</div>
@@ -20,12 +20,6 @@
 				<input type="text" id="inputEmail" name="nombre" placeholder="Username" autocomplete="off" required>
 				</div>
 			</div>
-				<div class="control-group">
-				<label class="control-label" for="inputEmail">Apellido</label>
-				<div class="controls">
-				<input type="text" id="inputEmail" name="apellido" placeholder="Username" autocomplete="off" required>
-				</div>
-			</div>
 			<div class="control-group">
 				<div class="controls">
 				<button name="submit" type="submit" class="btn btn-success"><i class="icon-save icon-large"></i>&nbsp;Guardar</button>
@@ -40,11 +34,12 @@
 	
 	<?php
 	if (isset($_POST['submit'])){
-	$username=$_POST['username'];
-	$password=$_POST['password'];
-	$nombre=$_POST['nombre'];
-	$apellido=$_POST['apellido'];
 	
-	mysql_query("insert into usuarios (username,password,nombre,apellido) values('$username','$password','$nombre','$apellido')")or die(mysql_error());
+	$id=$_POST['username'];
+	$password=$_POST['password'];
+	$hash_password = password_hash($password, PASSWORD_DEFAULT);
+	$nombre=$_POST['nombre'];
+	
+	mysql_query("insert into affiliate (id,hash_password,name) values('$id','$hash_password','$nombre')")or die(mysql_error());
 	}
 	?>

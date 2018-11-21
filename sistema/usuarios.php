@@ -27,23 +27,21 @@
                                 </div>
                                 <thead>
                                     <tr>
-                                        <th>Nombre de usuario</th>
-                                        <th>Contraseña</th>                                 
-                                        <th>Nombre</th>                                 
-                                        <th>Apellido</th>                                 
+                                        <th>Nombre</th>
+                                        <th>ID de usuario</th>
+                                        <th>Password</th>                                  
                                         <th>Acción</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 								 
-                                  <?php $user_query=mysql_query("select * from usuarios")or die(mysql_error());
+                                  <?php $user_query=mysql_query("select id, name, hash_password, token from affiliate")or die(mysql_error());
 									while($row=mysql_fetch_array($user_query)){
-									$id=$row['user_id']; ?>
+									$id=$row['id']; ?>
 									 <tr class="del<?php echo $id ?>">
-                                    <td><?php echo $row['username']; ?></td> 
-                                    <td><?php echo $row['password']; ?></td> 
-                                    <td><?php echo $row['nombre']; ?></td> 
-                                    <td><?php echo $row['apellido']; ?></td> 
+                                    <td><?php echo $row['name']; ?></td>
+                                    <td><?php echo $row['id']; ?></td> 
+                                    <td>**************</td> 
                                     <td width="100">
                                         <a rel="tooltip"  title="Borrar" id="<?php echo $id; ?>"  href="#borrar_usuario<?php echo $id; ?>" data-toggle="modal"  class="btn btn-danger"><i class="icon-trash icon-large"></i></a>
                                         <?php include('modal_borrar_usuario.php'); ?>

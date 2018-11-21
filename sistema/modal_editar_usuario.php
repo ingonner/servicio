@@ -6,28 +6,22 @@
         <div class="control-group">
 				<label class="control-label" for="inputEmail">Nombre</label>
 				<div class="controls">	
-				<input type="text" id="inputEmail" name="nombre" value="<?php echo $row['nombre']; ?>" autocomplete="off" required>
+				<input type="text" id="inputEmail" name="nombre" value="<?php echo $row['name']; ?>" autocomplete="off" required>
 				</div>
 			</div>
         
-			<div class="control-group">
-				<label class="control-label" for="inputEmail">Apellido</label>
-				<div class="controls"> 
-				<input type="text" id="inputEmail" name="apellido" value="<?php echo $row['apellido']; ?>" autocomplete="off" required>
-				</div>
-			</div>	
         
         <div class="control-group">
-				<label class="control-label" for="inputEmail">Username</label>
+				<label class="control-label" for="inputEmail">Clave de acceso</label>
 				<div class="controls">
-				<input type="hidden" id="inputEmail" name="id" value="<?php echo $row['user_id']; ?>" required>
-				<input type="text" id="inputEmail" name="username" value="<?php echo $row['username']; ?>" required>
+				<input type="hidden" id="inputEmail" name="id" value="<?php echo $row['id']; ?>" required>
+				<input type="text" id="inputEmail" name="username" value="<?php echo $row['id']; ?>" required>
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="inputPassword">Password</label>
 				<div class="controls">
-				<input type="text" name="password" id="inputPassword" value="<?php echo $row['password']; ?>" required>
+			<input type="text" name="password" id="inputPassword" value="<?php echo $row['hash_password'];?>" disabled>
 				</div>
 			</div>
 			
@@ -46,13 +40,12 @@
 	<?php
 	if (isset($_POST['edit'])){
 	
-	$user_id=$_POST['id'];
-	$username=$_POST['username'];
-	$password=$_POST['password'];
-	$nombre=$_POST['nombre'];
-	$apellido=$_POST['apellido'];
+	$id=$_POST['username'];
+	$name=$_POST['nombre'];
+	$hash_password=$_POST['hash_password'];
+	$token = $_POST['token'];
 	
-	mysql_query("update usuarios set username='$username', password='$password', nombre='$nombre',apellido='$apellido' where user_id='$user_id'")or die(mysql_error()); ?>
+	mysql_query("update affiliate set id='$id', name='$name' where token='$token'")or die(mysql_error()); ?>
 	<script>
 	window.location="usuarios.php";
 	</script>
