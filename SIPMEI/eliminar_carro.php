@@ -8,14 +8,14 @@ $name = isset($_GET['name']) ? $_GET['name'] : "";
 $user_id=1;
  
 // delete query
-$query = "DELETE FROM cart_items WHERE product_id=? AND user_id=?";
+$query = "DELETE FROM cart_items WHERE product_id=?";
  
 // prepare query
 $stmt = $con->prepare($query);
  
 // bind values
 $stmt->bindParam(1, $id);
-$stmt->bindParam(2, $user_id);
+
  
 // execute query
 if($stmt->execute()){

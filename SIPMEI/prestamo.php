@@ -14,31 +14,6 @@
  <form method="post" action="guardar_prestamo_carro.php">  
 
 
-    <?php  
-$action = isset($_GET['action']) ? $_GET['action'] : "";
-$product_id = isset($_GET['product_id']) ? $_GET['product_id'] : "1";
-$name = isset($_GET['name']) ? $_GET['name'] : "";
-$quantity = isset($_GET['quantity']) ? $_GET['quantity'] : "1";
-
-if($action=='removed'){
-    echo "<div class='alert alert-info'>";
-        echo "<strong>{$name}</strong> fue eliminado de la lista!";
-    echo "</div>";
-}
-            
-if($action=='added'){
-    echo "<div class='alert alert-info'>";
-        echo "<strong>{$name}</strong> ¡agregado!";
-    echo "</div>";
-}
- 
-else if($action=='failed'){
-    echo "<div class='alert alert-info'>";
-        echo "<strong>{$name}</strong> No se pudo agregar!";
-    echo "</div>";
-}
-?>
-
 
 
 
@@ -100,7 +75,7 @@ else if($action=='failed'){
                <select style="width:600px" name="id_articulo" id="product-id" class="chzn-select"required/>
 				<option></option>
 				
-                    <?php $result =  mysql_query("select id_articulo, nombre_articulo, marca from articulos ORDER BY nombre_articulo DESC")or die(mysql_error()); 
+                    <?php $result =  mysql_query("select id_articulo, nombre_articulo, marca from vista_articulos ORDER BY nombre_articulo DESC")or die(mysql_error()); 
 				while ($row=mysql_fetch_array($result)){ ?>
 					<option value="<?php echo $row['id_articulo']; ?>"><?php echo $row['nombre_articulo'];?> (<?php echo $row['marca'];?>)
                     </option>

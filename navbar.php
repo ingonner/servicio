@@ -15,7 +15,7 @@
 					<li class="divider-vertical"></li>
 					<li class="">
                         
-					<a rel="tooltip"  data-placement="bottom" title="Accede al sistema" id="login" href="sistema"><i class="icon-user icon-large"></i>&nbsp;Iniciar Sesión</a>
+					<a rel="tooltip"  data-placement="bottom" title="Accede al sistema" id="login" href="SIPMEI"><i class="icon-user icon-large"></i>&nbsp;Ingresar al SIPMEI</a>
 					</li>
 				
 				
