@@ -65,12 +65,7 @@ class affiliates {
 
         // Verificar integridad de datos
         // TODO: Implementar restricciones de datos adicionales
-        if (!isset($decodedParameters["id"]) ||
-            !isset($decodedParameters["password"]) ||
-            !isset($decodedParameters["name"]) ||
-            !isset($decodedParameters["address"]) ||
-            !isset($decodedParameters["gender"])
-        ) {
+        {
             // TODO: Crear una excepción individual por cada causa anómala
             throw new ApiException(
                 400,

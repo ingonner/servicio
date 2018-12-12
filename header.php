@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		 <meta name="sistema_bio"  content="text/html;" http-equiv="content-type" charset="utf-8">
 	<!-- Bootstrap -->
-			<link rel="shortcut icon" href="sistema/media/favicon.ico" />
+			<link rel="shortcut icon" href="img/favicon.ico" />
 			<link href="css/bootstrap.css" rel="stylesheet" media="screen">
 			<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
 			<link href="css/docs.css" rel="stylesheet" media="screen">
@@ -20,7 +20,9 @@
 	<script src="js/jquery.hoverdir.js"></script>
 	<script type="text/javascript" charset="utf-8" language="javascript" src="js/jquery.dataTables.js"></script>
     <script type="text/javascript" charset="utf-8" language="javascript" src="js/DT_bootstrap.js"></script>
-			
+
+<?php date_default_timezone_set('America/Mexico_City');?>
+
 <script>
 jQuery(document).ready(function() {
 $(function(){
@@ -45,5 +47,5 @@ $(function(){
 			</style>
 		</noscript>		
 </head>
-<?php date_default_timezone_set('America/Mexico_City'); ?>
+
 <body>

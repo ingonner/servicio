@@ -4,6 +4,8 @@
 
     $id_alumno = $_POST['id_alumno'];
 	$fecha_devolucion = $_POST['fecha_devolucion'];
+
+	
 	mysql_query("insert into prestamos (id_alumno,fecha_prestamo,fecha_devolucion) values ('$id_alumno',NOW(),'$fecha_devolucion')")or die(mysql_error());
 
        

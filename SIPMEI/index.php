@@ -15,7 +15,7 @@
 								<div class="control-group">
 									<label class="control-label" for="inputEmail">Usuario</label>
 									<div class="controls">
-									<input type="text" name="username" id="username" placeholder="Ingresa tu nombre de usuario" required>
+									<input type="text" minlength="4" maxlength="10" name="username" id="username" placeholder="Ingresa tu nombre de usuario" required>
 									</div>
 								</div>
 								<div class="control-group">

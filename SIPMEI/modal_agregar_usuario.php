@@ -5,19 +5,19 @@
 			<div class="control-group">
 				<label class="control-label" for="inputEmail">Nueva clave de acceso</label>
 				<div class="controls">
-				<input type="text" id="inputEmail" name="username" placeholder="Username" autocomplete="off" required>
+				<input type="text" minlength="4" maxlength="10" pattern="[0-9]+" id="inputEmail" name="username" placeholder="Mínimo 4 dígitos" autocomplete="off" required>
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="inputPassword">Contraseña</label>
 				<div class="controls">
-				<input type="password" name="password" id="inputPassword" placeholder="Password" required>
+				<input type="password" name="password" id="inputPassword" placeholder="Contraseña" required>
 				</div>
 			</div>
 				<div class="control-group">
 				<label class="control-label" for="inputEmail">Nombre</label>
 				<div class="controls">
-				<input type="text" id="inputEmail" name="nombre" placeholder="Username" autocomplete="off" required>
+				<input type="text" id="inputEmail" name="nombre" placeholder="Ingresa tu nombre" autocomplete="off" required>
 				</div>
 			</div>
 			<div class="control-group">
@@ -40,6 +40,16 @@
 	$hash_password = password_hash($password, PASSWORD_DEFAULT);
 	$nombre=$_POST['nombre'];
 	
+	$query = "SELECT id FROM affiliate WHERE id='$id'";
+	$result = mysql_query($query)or die(mysql_error());
+	$num_row = mysql_num_rows($result);
+	$row=mysql_fetch_array($result);
+	if( $num_row > 0 ) {
+	echo "<script>alert('No puedes usar ésta clave de acceso.');</script>";
+    }
+else{
+
 	mysql_query("insert into affiliate (id,hash_password,name) values('$id','$hash_password','$nombre')")or die(mysql_error());
 	}
+}
 	?>

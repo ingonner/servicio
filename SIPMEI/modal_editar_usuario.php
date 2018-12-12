@@ -15,7 +15,7 @@
 				<label class="control-label" for="inputEmail">Clave de acceso</label>
 				<div class="controls">
 				<input type="hidden" id="inputEmail" name="id" value="<?php echo $row['id']; ?>" required>
-				<input type="text" id="inputEmail" name="username" value="<?php echo $row['id']; ?>" required>
+				<input type="text" minlength="4" maxlength="10" pattern="[0-9]+" id="inputEmail" name="username" value="<?php echo $row['id']; ?>" required>
 				</div>
 			</div>
 			<div class="control-group">
