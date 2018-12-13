@@ -139,7 +139,10 @@ class cart_items {
             $preparedStament = $pdo->prepare($sentence);
 
             // Ejecutar sentencia
-            return $preparedStament->execute();
+            if($preparedStament->execute()){
+                return ["status" => 201, "message" => "El carrito se vació correctamente."];
+            }
+
 
         } catch (PDOException $e) {
             throw new ApiException(
@@ -182,6 +185,10 @@ class cart_items {
                 "http://localhost",
                 "Uno de los atributos del préstamo no está definido en los parámetros");
         }
+
+        //Verifica que el carrito no se encuentre vacío
+        $checkCart = self::showCart_items();
+        if($checkCart != NULL){
 
         // Realizar el prestamo
         $dbResult = self::saveLend($decodedParameters);
@@ -230,6 +237,15 @@ class cart_items {
                 "Error del servidor",
                 "http://localhost",
                 "Error en la base de datos al realizar el préstamo.");
+        }
+    }
+    else {
+            throw new ApiException(
+                500,
+                0,
+                "No hay artículos que prestar.",
+                "http://localhost",
+                "No hay artículos que prestar.");
         }
 }
 
@@ -454,7 +470,7 @@ else{
                 0,
                 "Error de base de datos en el servidor",
                 "http://localhost",
-                "Ocurrió el siguiente error al intentar insertar el articulo: " . $e->getMessage());
+                "Ocurrió el siguiente error al intentar eliminar el articulo: " . $e->getMessage());
         }
     }
 }
@@ -479,8 +495,17 @@ else{
                 while( $row = $preparedSentence->fetch(PDO::FETCH_ASSOC)){
                     extract($row);
                     $rows[] = $row;
-                }                  
-                 return $rows;
+                }        
+            
+                return $rows; 
+            /*
+                if(empty($rows)){
+                    return NULL;
+                }  
+                else{
+                 return $rows; 
+                }        
+             */  
                 
             } else {
                 throw new ApiException(
