@@ -52,6 +52,16 @@ class affiliates {
         $parameters = file_get_contents('php://input');
         $decodedParameters = json_decode($parameters, true);
 
+       /* 
+        //Verifica que los datos llegan correctamente
+       return [
+                "status" => 200,
+                "id" => $decodedParameters["id"],
+                "name" => $decodedParameters["name"],
+                "address" => $decodedParameters["address"],
+                "gender" => $decodedParameters["gender"]
+            ];*/
+
         // Controlar posible error de parsing JSON
         if (json_last_error() != JSON_ERROR_NONE) {
             $internalServerError = new ApiException(
@@ -64,6 +74,12 @@ class affiliates {
         }
 
         // Verificar integridad de datos
+         if (!isset($decodedParameters["id"]) ||
+            !isset($decodedParameters["password"])||
+            !isset($decodedParameters["name"])||
+            !isset($decodedParameters["address"])||
+            !isset($decodedParameters["gender"])
+        )
         // TODO: Implementar restricciones de datos adicionales
         {
             // TODO: Crear una excepción individual por cada causa anómala
@@ -74,10 +90,9 @@ class affiliates {
                 "http://localhost",
                 "Uno de los atributos del afiliado no está definido en los parámetros");
         }
-
         // Insertar afiliado
         $dbResult = self::insertAffiliate($decodedParameters);
-
+        //return $dbResult;
         // Procesar resultado de la inserción
         if ($dbResult) {
             return ["status" => 201, "message" => "Afiliado registrado"];
@@ -89,7 +104,9 @@ class affiliates {
                 "http://localhost",
                 "Error en la base de datos al ejecutar la inserción del afiliado.");
         }
-    }
+    
+    
+}
 
     private static function authAffiliate() {
 
@@ -185,7 +202,7 @@ class affiliates {
             throw new ApiException(
                 500,
                 0,
-                "Error de base de datos en el servidor",
+                "El numero de identificación ya ha sido registrado anteriormente.",
                 "http://localhost",
                 "Ocurrió el siguiente error al intentar insertar el afiliado: " . $e->getMessage());
         }

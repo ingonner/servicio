@@ -13,9 +13,10 @@
 				</div>
 						<form class="form-horizontal" method="POST">
 								<div class="control-group">
-									<label class="control-label" for="inputEmail">Usuario</label>
+									<label class="control-label" for="inputEmail">Clave de acceso</label>
 									<div class="controls">
-									<input type="text" minlength="4" maxlength="10" name="username" id="username" placeholder="Ingresa tu nombre de usuario" required>
+									<input type="text" minlength="4" maxlength="10"
+									name="username" id="username" placeholder="Ingresa tu clave de acceso" required>
 									</div>
 								</div>
 								<div class="control-group">

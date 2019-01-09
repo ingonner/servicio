@@ -36,9 +36,13 @@
 	if (isset($_POST['submit'])){
 	
 	$id=$_POST['username'];
+	$name=$_POST['nombre'];
+	$address="No disponible";
+	$gender="No disponible";
 	$password=$_POST['password'];
 	$hash_password = password_hash($password, PASSWORD_DEFAULT);
-	$nombre=$_POST['nombre'];
+	$token = uniqid(rand(), TRUE);
+
 	
 	$query = "SELECT id FROM affiliate WHERE id='$id'";
 	$result = mysql_query($query)or die(mysql_error());
@@ -48,8 +52,7 @@
 	echo "<script>alert('No puedes usar ésta clave de acceso.');</script>";
     }
 else{
-
-	mysql_query("insert into affiliate (id,hash_password,name) values('$id','$hash_password','$nombre')")or die(mysql_error());
+	mysql_query("insert into affiliate (id, hash_password, name, address, gender, token) values('$id','$hash_password','$name','$address','$gender','$token')")or die(mysql_error());
 	}
 }
 	?>

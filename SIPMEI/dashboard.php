@@ -13,4 +13,13 @@
 			</div>
 		</div>
     </div>
+
+
+    <footer class="footer">
+      <div class="container">
+      <div class="foot-margin">
+        <p><a>2018 Instituto Tecnológico Superior de Pátzcuaro. Oscar Maldonado. TICs. 2018</a></p>
+      </div>
+      </div>
+    </footer>
 <?php include('footer.php') ?>
