@@ -323,7 +323,7 @@ date_default_timezone_set('America/Mexico_City');
         //Extraer datos del articulo
         $id_alumno = $decodedParameters["id_alumno"];
         //$fecha_prestamo=date('Y-m-d');
-        $fecha_prestamo=date('d-m-Y h:i:s a', time());
+        $fecha_prestamo=date('Y-m-d h:i:s a', time());
         $fecha_devolucion = $decodedParameters["fecha_devolucion"];
 
         try {

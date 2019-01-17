@@ -3,6 +3,7 @@
 require 'controllers/affiliates.php';
 require 'controllers/cart_items.php';
 require 'controllers/students.php';
+require 'controllers/loans.php';
 require 'views/XmlView.php';
 require 'views/JsonView.php';
 require 'utils/ApiException.php';
@@ -39,7 +40,7 @@ if (isset($_GET['PATH_INFO'])) {
 
 // Obtener recurso
 $resource = array_shift($urlSegments);
-$apiResources = array('cart_items','affiliates','students');
+$apiResources = array('cart_items','affiliates','students','loans');
 
 // Comprobar si existe el recurso
 if (!in_array($resource, $apiResources)) {
