@@ -21,7 +21,7 @@
 		<div class="control-group">
 			<label class="control-label" for="inputEmail">Nombre del articulo:</label>
 			<div class="controls">
-			<input type="text" class="span4" id="inputEmail" name="nombre_articulo" autocomplete="off" placeholder="Nombre del articulo" required>
+			<input type="text" class="span4" id="inputEmail" name="nombre_articulo" autocomplete="off" placeholder="Nombre del articulo" pattern="[a-zA-Z0-9]+" title="No caracteres especiales" required>
 			</div>
 		</div>
 		

@@ -5,7 +5,7 @@ if (isset($_POST['submit'])){
     
 $problema=$_POST['problema'];
 $accion_alumno=$_POST['accion_alumno'];
-$id=$_GET['id'];
+$id=$_GET['id']; //id_detalle_prestamos
 $id_articulo = $_GET['id_articulo'];
 $detalle = $_POST['detalle'];    
 $fecha_actual = date('Y-m-d h:i:s a', time());
