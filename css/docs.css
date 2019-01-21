@@ -174,9 +174,9 @@ width: 260px;
 .nav li a{
 	text-transform:uppercase;
 }
+
 .header{
-	background: none repeat scroll 0 0 #f2db37;
-	height: 211px;
+	height: 100px;
 	margin-bottom: 21px;
 }
 .stilogo{

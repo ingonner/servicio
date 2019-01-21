@@ -1,6 +1,6 @@
 <?php
 // connect to database
-include 'database.php';
+include 'dbcon.php';
  
 
 $action = isset($_GET['action']) ? $_GET['action'] : "";

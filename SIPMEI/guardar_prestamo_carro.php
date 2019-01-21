@@ -1,13 +1,10 @@
 	<?php
  	include('dbcon.php');
 	
- 	date_default_timezone_set('America/Mexico_City');
 
     $id_alumno = $_POST['id_alumno'];
 	$fecha_devolucion = $_POST['fecha_devolucion'];
-	$fecha_prestamo = date('Y-m-d h:i:s a', time());
-	
-	mysql_query("insert into prestamos (id_alumno,fecha_prestamo,fecha_devolucion) values ('$id_alumno','$fecha_prestamo','$fecha_devolucion')")or die(mysql_error());
+	mysql_query("insert into prestamos (id_alumno,fecha_prestamo,fecha_devolucion) values ('$id_alumno',NOW(),'$fecha_devolucion')")or die(mysql_error());
 
        
     //  sacar el ID del ultimo prestamo

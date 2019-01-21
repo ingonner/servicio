@@ -18,6 +18,11 @@
 					<a rel="tooltip"  data-placement="bottom" title="Accede al sistema" id="login" href="SIPMEI"><i class="icon-user icon-large"></i>&nbsp;Ingresar al SIPMEI</a>
 					</li>
 				
+						<li class="divider-vertical"></li>
+					<li class="">
+                        
+					<a rel="tooltip"  data-placement="bottom" title="Descargar APK Android" href="APK/SIPMEI.apk" download="SIPMEIv1"><i class="icon-download icon-large"></i>&nbsp;Descargar para Android</a>
+					</li>
 				
 					<li class="divider-vertical"></li>
 					<li class="signup"><span class="sg"></span></li>

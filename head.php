@@ -1,7 +1,7 @@
 		<div class="span12">
 				<div class="header">
 				<div class="pull-left">
-				<img class="stilogo" src="LMS/headeritspa.PNG">
+				<img class="stilogo" width="100%" src="LMS/headeritspa.PNG">
 				</div>
 				</div>
 
