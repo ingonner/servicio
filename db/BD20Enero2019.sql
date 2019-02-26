@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 21-11-2018 a las 05:20:46
+-- Servidor: 127.0.0.1:3306
+-- Tiempo de generación: 21-01-2019 a las 04:40:09
 -- Versión del servidor: 10.2.17-MariaDB
--- Versión de PHP: 7.1.22
+-- Versión de PHP: 7.2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,9 +42,7 @@ CREATE TABLE `affiliate` (
 --
 
 INSERT INTO `affiliate` (`id`, `hash_password`, `name`, `address`, `gender`, `token`) VALUES
-('0987654321', '$2y$10$FY0K.zJcug01GBILwi/swu6YcsgUYROr.rSHW0vtSuvkkNh9Jjf0S', 'Test', 'Vacio', '', '4528396975bf4d6c061f121.59070414'),
-('1234567890', '$2y$10$yZIGj2duA1bvdA/Mbnxsq.rWN8gpTXvYm4ZS6HTwRYFnv/eKAIXrW', 'Oscar', 'Calle 23 #2', 'M', '29595be1e8c968bff4.99713412'),
-('1397', '$2y$10$kwXaEZ81qGuguidnf4qlye6asYb4qTAtJeaVAd.lwCe3c2U2//D.G', 'Administrador', 'Vacio', '', '6204756065be2778c078c11.82915368');
+('4434409911', '$2y$10$I/xQiR6mamf6iY2W6rEJ3.Q7wwoWtZm5wkqoAclQJUcajf6DElbwW', 'PELIGRO NO BORRAR', 'No disponible', '', '4808138665c454bfe17c5f3.83962066');
 
 -- --------------------------------------------------------
 
@@ -69,7 +67,6 @@ CREATE TABLE `alumnos` (
 --
 
 INSERT INTO `alumnos` (`id_alumno`, `nombre`, `apellido`, `genero`, `num_control`, `carrera`, `celular`, `semestre`, `estatus`) VALUES
-(1, 'Carlos Ivan', 'Barajas Diaz Barriga', 'Hombre', '12090082', 'IBIO', '0000000000', '14', 'Activo'),
 (2, 'Alan Amaury', 'Sanchez Rodriguez', 'Hombre', '13090117', 'IBIO', '0000000000', '12', 'Activo'),
 (3, 'Fernando', 'Maciel Maldonado', 'Hombre', '13090128', 'IBIO', '0000000000', '12', 'Activo'),
 (4, 'Ivan', 'Talavera Gaona', 'Hombre', '13090129', 'IBIO', '0000000000', '12', 'Activo'),
@@ -123,9 +120,8 @@ INSERT INTO `alumnos` (`id_alumno`, `nombre`, `apellido`, `genero`, `num_control
 (52, 'Kenia Edith', 'Perez Contreras', 'Mujer', '17092282', 'IBIO', '0000000000', '4', 'Activo'),
 (53, 'Sandra', 'Gonzalez Rivera', 'Mujer', '17092284', 'IBIO', '0000000000', '4', 'Activo'),
 (54, 'Jesus', 'Garcia Garcia', 'Hombre', '17092302', 'IBIO', '0000000000', '4', 'Activo'),
-(55, 'Jos? Antonio', 'De Jesus Trinidad', 'Hombre', '17092313', 'IBIO', '0000000000', '4', 'Activo'),
-(56, 'Viviana Michelle', 'Gaona Carrillo', 'Mujer', '17092343', 'IBIO', '0000000000', '4', 'Activo'),
-(57, 'Omar', 'Gaona', 'Hombre', '13090018', 'ITICs', '0000000000', '12', 'Bloqueado');
+(55, 'Jose Antonio', 'De Jesus Trinidad', 'Hombre', '17092313', 'IBIO', '0000000000', '4', 'Activo'),
+(56, 'Viviana Michelle', 'Gaona Carrillo', 'Mujer', '17092343', 'IBIO', '0000000000', '4', 'Activo');
 
 -- --------------------------------------------------------
 
@@ -380,7 +376,7 @@ INSERT INTO `articulos` (`id_articulo`, `nombre_articulo`, `id_categoria`, `marc
 (233, 'TRANSISTOR BC 558', 3, 'No registrado', 80, 'TRANSISTOR BC 558', '2018-09-12 21:28:40', 'Nuevo'),
 (234, 'TRANSISTOR TIP 122', 3, 'No registrado', 80, 'TRANSISTOR TIP 122', '2018-09-12 21:28:53', 'Nuevo'),
 (235, 'TRANSISTOR TIP 125', 3, 'No registrado', 80, 'TRANSISTOR TIP 125', '2018-09-12 21:29:07', 'Nuevo'),
-(236, 'TRIAC BTA 10-600B', 3, 'TRIAC', 80, 'TRIAC BTA 10-600B', '2018-09-12 21:29:32', 'Nuevo'),
+(236, 'TRIAC BTA 10+600B', 3, 'TRIAC', 80, 'TRIAC BTA 10+600B', '2018-09-12 21:29:32', 'Nuevo'),
 (237, 'SCR S4006L', 3, 'No registrado', 80, 'SCR S4006L', '2018-09-12 21:29:53', 'Nuevo'),
 (238, 'OPTO MOC 3011', 3, 'No registrado', 80, 'OPTO MOC 3011', '2018-09-12 21:30:11', 'Nuevo'),
 (239, 'POTENCIOMETRO 1 KΩ', 3, 'TRIMPOT', 40, 'POTENCIOMETRO 1 KΩ', '2018-09-12 21:32:16', 'Nuevo'),
@@ -388,7 +384,7 @@ INSERT INTO `articulos` (`id_articulo`, `nombre_articulo`, `id_categoria`, `marc
 (241, 'POTENCIOMETRO 50 KΩ', 3, 'TRIMPOT', 40, 'POTENCIOMETRO 50 KΩ', '2018-09-12 21:32:35', 'Nuevo'),
 (242, 'POTENCIOMETRO 100 KΩ', 3, 'TRIMPOT', 40, 'POTENCIOMETRO 100 KΩ', '2018-09-12 21:32:40', 'Nuevo'),
 (243, 'POTENCIOMETRO 1 MΩ', 3, 'TRIMPOT', 40, 'POTENCIOMETRO 1 MΩ', '2018-09-12 21:32:45', 'Nuevo'),
-(244, 'BATERIA ACIDO-PLOMO 12 VOLTIOS 7.5 AH', 3, 'No registrado', 2, 'BATERIA ACIDO-PLOMO 12 VOLTIOS 7.5 AH', '2018-09-12 21:34:25', 'Nuevo'),
+(244, 'BATERIA ACIDO/PLOMO 12 VOLTIOS 7.5 AH', 3, 'No registrado', 2, 'BATERIA ACIDO-PLOMO 12 VOLTIOS 7.5 AH', '2018-09-12 21:34:25', 'Nuevo'),
 (245, 'DIAC DB4', 3, 'DIAC', 50, 'DIAC DB4', '2018-09-12 21:35:01', 'Nuevo'),
 (246, 'RELEVADOR 12 VOLTIOS 4 PINES', 3, 'No registrado', 50, 'RELEVADOR 12 VOLTIOS 4 PINES', '2018-09-12 21:35:35', 'Nuevo'),
 (247, 'RELEVADOR 12 VOLTIOS 5 PINES', 3, 'No registrado', 50, 'RELEVADOR 12 VOLTIOS 5 PINES', '2018-09-12 21:35:48', 'Nuevo'),
@@ -449,13 +445,6 @@ CREATE TABLE `articulos_danados` (
   `detalle` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `articulos_danados`
---
-
-INSERT INTO `articulos_danados` (`id`, `id_articulo`, `id_alumno`, `fecha_devolucion`, `detalle`) VALUES
-(1, 55, 57, '2018-10-15', 'Se rompio');
-
 -- --------------------------------------------------------
 
 --
@@ -468,13 +457,6 @@ CREATE TABLE `articulos_perdidos` (
   `fecha_extravio` date NOT NULL,
   `id_articulo` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `articulos_perdidos`
---
-
-INSERT INTO `articulos_perdidos` (`id`, `id_alumno`, `fecha_extravio`, `id_articulo`) VALUES
-(1, '57', '2018-10-15', 236);
 
 -- --------------------------------------------------------
 
@@ -490,17 +472,6 @@ CREATE TABLE `cart_items` (
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `cart_items`
---
-
-INSERT INTO `cart_items` (`id`, `product_id`, `quantity`, `user_id`, `created`, `modified`) VALUES
-(1, 6, 1, 1234567890, '0000-00-00 00:00:00', '2018-11-20 15:47:06'),
-(2, 36, 3, 1234567890, '0000-00-00 00:00:00', '2018-11-20 17:19:11'),
-(3, 35, 1, 1234567890, '0000-00-00 00:00:00', '2018-11-20 17:19:39'),
-(13, 163, 3, 1, '2018-11-10 01:28:42', '2018-11-10 00:28:42'),
-(16, 28, 1, 1, '2018-11-21 04:44:50', '2018-11-21 04:44:50');
 
 -- --------------------------------------------------------
 
@@ -521,8 +492,7 @@ INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`) VALUES
 (7, 'Herramienta'),
 (3, 'Material Electrónico'),
 (8, 'Computadora'),
-(9, 'Aparato electrónico'),
-(10, 'Material');
+(9, 'Aparato electrónico');
 
 -- --------------------------------------------------------
 
@@ -540,19 +510,17 @@ CREATE TABLE `detalle_prestamos` (
   `fecha_entregado` varchar(1000) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `detalle_prestamos`
---
+-- --------------------------------------------------------
 
-INSERT INTO `detalle_prestamos` (`id_detalle_prestamos`, `id_articulo`, `cantidad`, `id_prestamo`, `estatus_prestamo`, `fecha_devolucion`, `fecha_entregado`) VALUES
-(1, 55, 3, 1, 'devuelto', '', '2018-10-15 14:28:33'),
-(2, 53, 2, 2, 'devuelto', '', '2018-10-15 14:27:40'),
-(3, 236, 9, 2, 'devuelto', '', '2018-10-15 15:08:57'),
-(4, 233, 6, 2, 'devuelto', '', '2018-10-15 15:06:50'),
-(5, 235, 4, 3, 'devuelto', '', '2018-10-15 14:27:45'),
-(6, 231, 1, 3, 'devuelto', '', '2018-10-15 14:27:37'),
-(7, 162, 7, 3, 'pendiente', '', ''),
-(8, 5, 2, 4, 'devuelto', '', '2018-10-15 15:06:47');
+--
+-- Estructura Stand-in para la vista `existencias`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `existencias` (
+`id_articulo` int(11)
+,`cantidad_disponible` bigint(12)
+,`estatus_prestamo` varchar(50)
+);
 
 -- --------------------------------------------------------
 
@@ -566,16 +534,6 @@ CREATE TABLE `prestamos` (
   `fecha_prestamo` varchar(100) NOT NULL,
   `fecha_devolucion` varchar(100) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `prestamos`
---
-
-INSERT INTO `prestamos` (`id_prestamo`, `id_alumno`, `fecha_prestamo`, `fecha_devolucion`) VALUES
-(1, 57, '2018-09-24 13:39:50', '25/09/2018'),
-(2, 57, '2018-09-24 13:40:51', '24/09/2018'),
-(3, 57, '2018-10-15 14:26:39', '15/10/2018'),
-(4, 1, '2018-10-15 15:06:33', '16/10/2018');
 
 -- --------------------------------------------------------
 
@@ -591,6 +549,15 @@ CREATE TABLE `vista_articulos` (
 ,`ejemplares` int(3)
 ,`detalle` text
 );
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `existencias`
+--
+DROP TABLE IF EXISTS `existencias`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`u834655291_usr`@`localhost` SQL SECURITY DEFINER VIEW `existencias`  AS  select `r1`.`id_articulo` AS `id_articulo`,`r1`.`cantidad_disponible` AS `cantidad_disponible`,`r1`.`estatus_prestamo` AS `estatus_prestamo` from (select `T1`.`id_articulo` AS `id_articulo`,`T1`.`ejemplares` - `T2`.`cantidad` AS `cantidad_disponible`,`T2`.`estatus_prestamo` AS `estatus_prestamo` from (`articulos` `T1` join `detalle_prestamos` `T2` on(`T1`.`id_articulo` = `T2`.`id_articulo`))) `r1` where `r1`.`estatus_prestamo` = 'pendiente' ;
 
 -- --------------------------------------------------------
 
@@ -671,31 +638,31 @@ ALTER TABLE `prestamos`
 -- AUTO_INCREMENT de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT de la tabla `articulos`
 --
 ALTER TABLE `articulos`
-  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=291;
+  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=295;
 
 --
 -- AUTO_INCREMENT de la tabla `articulos_danados`
 --
 ALTER TABLE `articulos_danados`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `articulos_perdidos`
 --
 ALTER TABLE `articulos_perdidos`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `cart_items`
 --
 ALTER TABLE `cart_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
@@ -707,13 +674,13 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `detalle_prestamos`
 --
 ALTER TABLE `detalle_prestamos`
-  MODIFY `id_detalle_prestamos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_detalle_prestamos` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamos`
 --
 ALTER TABLE `prestamos`
-  MODIFY `id_prestamo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_prestamo` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

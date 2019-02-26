@@ -1,8 +1,7 @@
 <?php
-//mysql_select_db('u834655291_inven',mysql_connect('localhost','u834655291_usr','sspassword123'))or die(mysql_error());
 
 $host = "localhost";
-$db_name = "sistema_bio";
+$db_name = "sipmei";
 $username = "root";
 $password = "";
 

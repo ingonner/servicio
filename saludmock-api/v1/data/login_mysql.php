@@ -5,7 +5,7 @@
  */
 // TODO: cambiar por dominio o IP en producción
 define("MYSQL_HOST", "localhost");
-define("MYSQL_DATABASE_NAME", "salud_mock");
+define("MYSQL_DATABASE_NAME", "sipmei");
 // TODO: cambiar en producción
 define("MYSQL_USERNAME", "root");
 // TODO: cambiar en producción
