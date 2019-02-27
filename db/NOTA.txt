@@ -1,0 +1,33 @@
+-Al instalar de nuevo el SIPMEI en mi LOCALHOST, tuve problemas con la vista llamada
+	"vista_articulos" al importar la BD, así que dejo el SQL para importarla por 
+	separado en caso de que se haya presentado el problema.
+
+-El archivo APK ponerlo en la carpeta /APK que se encuentra en la raíz en lugar del otro archivo.
+
+-Para instalar la aplicación hay que entrar desde el celular a la página del SIPMEI y descargar
+	la APK (desde el menú deslizable).
+
+-Usar las siguientes credenciales para iniciar sesión:
+		Usuario: 4434409911
+		Contraseña: qwerty
+	O crear un nuevo usuario mediante la API como lo indica el manual.
+	Una vez dentro del sistema se pueden crear los usuarios necesarios.
+
+-En la parte donde se debe colocar la IP es IMPORTANTE poner también la Subcarpeta
+	donde se encuentra la aplicación en sí. Por ejemplo en mi caso fué:
+		192.168.1.79/servicio
+
+-Se puede cambiar la IP si es necesario cerrando la sesión.
+
+-Si se cierra la sesión, se queda guardada la dirección del servidor y
+	aparece en el formulario del login para que la persona que use 
+	la aplicación no la tenga que memorizar.
+
+-A pesar de que la aplicación fue probada en varios teléfonos (Android 6 en adelante),
+	hubo una ocasion en que no se instalaba en un celular Huawei. "Aplicación no instalada".
+	Esto es ajeno a algun problema de la aplicación, ya que suele suceder con otras aplicaciones y,
+	aquella vez lo solucioné asi: 
+	Googleando el error di con una aplicacion llamada ApkEditorPro. Solo hay que renombrar
+	el nombre del paquete de la aplicacion y ya. Es un buen dato por si se llega a presentar
+	el mismo problema.
+	 
